@@ -1,0 +1,115 @@
+--- 
+description: "你好像不小心迷路了 :(" 
+permalink: /404.html 
+navcolor: "invert" 
+---
+<html>
+<style lang="">
+	body {
+		font-family: 'Montserrat', sans-serif;
+		background: #cafdc1;
+		padding-top: 25px;
+	}
+
+	body .col-centered {
+		margin: 0 auto;
+		float: none;
+	}
+
+	body .card {
+		background: url("{{site.imgurl}}/404-bg.jpg") no-repeat;
+		background-size: cover;
+		background-position: center;
+		background-color: #2b2b2b;
+		border-radius: 20px;
+		width:60%;
+		height: 750px;
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-between;
+		box-shadow: 0 25px 45px rgba(0, 0, 0, 0.5);
+	}
+
+	body .card .error {
+		font-size: 200px;
+		font-weight: 700;
+		color: rgba(231, 103, 97, 0.95);
+		position: relative;
+		margin-top: 148px;
+	}
+
+	body .card .error:before {
+		background: url("{{site.imgurl}}/leaf1.png") no-repeat;
+		content: '';
+		position: absolute;
+		display: block;
+		width: 270px;
+		height: 222px;
+		left: -109px;
+		top: 97px;
+	}
+
+	body .card .error:after {
+		background: url("{{site.imgurl}}/leaf2.png") no-repeat;
+		content: '';
+		position: absolute;
+		display: block;
+		width: 120px;
+		height: 109px;
+		right: -51px;
+		top: 140px;
+	}
+
+
+
+
+	body .card .bottom-part {
+		margin-bottom: 90px;
+		text-align: center;
+	}
+
+	body .card .bottom-part p {
+		color: #d9fdc1;
+		font-size: 20px;
+		font-weight: 400;
+		margin-bottom: 50px;
+	}
+
+	body .card .bottom-part a {
+		display: inline-block;
+		padding: 15px 50px;
+		background-color: #90b35e;
+		border-radius: 100px;
+		font-size: 20px;
+		color: #d9fdc1;
+		text-decoration: none;
+	}
+
+
+
+	@media (max-width: 767px) {
+
+
+		.error {
+			margin-top: 138px !important;
+		}
+
+		.bottom-part p {
+			font-size: 13px !important;
+		}
+	}
+</style>
+<body>
+<div class="card col-centered">
+			<div class="error">404</div>
+
+			<div class="bottom-part">
+				<p>{{page.description}}</p>
+
+				<a href="{{site.baseurl}}/">HOME</a>
+			</div>
+</div>
+</body>
+</html>

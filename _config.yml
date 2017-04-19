@@ -1,0 +1,96 @@
+# Site settings
+author: kasmine
+title: Kasmine Blog
+SEOTitle: 廖晓娟的博客 | Kasmine Blog
+header-img: assets/img/home-bg.jpg
+post-img: assets/img/post-bg.jpg
+email: momo736929286@gmail.com
+description: ""
+keyword: ""
+url: ""              # your host, for absolute URL
+baseurl: "/kasmine.blog"                             # for example, '/blog' if your blog hosted on 'host/blog'
+imgurl: "/kasmine.blog/assets/img"
+# baseurl: ""                             # 本地调试使用
+# imgurl: "/assets/img"
+
+
+
+# SNS settings
+RSS: false
+weibo_username:     kasmine
+# zhihu_username:     kasmine
+github_username:    Me-Momo
+#twitter_username:  kasmine
+facebook_username:  kasmineLiao
+# linkedin_username:  firstname-lastname-idxxxx
+
+
+
+# Build settings
+# from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
+highlighter: rouge
+# permalink: pretty
+permalink: /:year/:month/:day/:title.html
+paginate: 10
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md","README.zh.md"]
+anchorjs: true                          # 如何设置
+
+
+
+# Gems
+# from PR#40, to support local preview for Jekyll 3.0
+gems: [jekyll-paginate]
+
+
+markdown: kramdown
+kramdown:
+  input: GFM                            # use Github Flavored Markdown !important
+
+
+
+# Disqus settings  待完善
+disqus_username: _your_disqus_short_name_
+
+
+
+# Analytics settings
+# Google Analytics
+ga_track_id: 'UA-89922034-1'            # Format: UA-xxxxxx-xx
+# ga_domain:
+
+
+
+# Sidebar settings
+sidebar: true                           # whether or not using Sidebar.
+sidebar-about-description: "认真学习 n(*≧▽≦*)n <br />拥抱大前端 "
+sidebar-avatar: /assets/img/avatar-kasmine.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+
+
+# Progressive Web Apps
+chrome-tab-theme-color: "lightred"
+service-worker: true
+
+
+# Catalog settings
+catalog: true
+
+# Featured Tags
+featured-tags: true                     # whether or not using Feature-Tags
+featured-condition-size: 1              # A tag will be featured if the size of it is more than this condition value
+
+# Tags
+tags: [{
+
+}]
+
+
+
+# Friends
+friends: [{
+        title: "前端外刊评论",
+        href: "http://qianduan.guru/"
+    },{
+      title: "前端周刊",
+      href: "http://www.feweekly.com"
+    }
+]

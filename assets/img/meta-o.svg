@@ -1,0 +1,7 @@
+<svg width="108" height="50" xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <linearGradient id="vg" gradientUnits="userSpaceOnUse" x1="54" y1="50" x2="54" y2="0">
+    <stop offset="0" style="stop-color:#333333"/>
+    <stop offset="1" style="stop-color:#000000"/>
+  </linearGradient>
+  <polygon fill-rule="evenodd" clip-rule="evenodd" fill="url(#vg)" points="0,0 108,0 0,50 "/>
+</svg>

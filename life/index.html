@@ -1,0 +1,72 @@
+---
+layout: default
+title: Life 
+header-img: assets/img/life-bg.jpg 
+description: 投入兴趣,找到快乐,在不同的阶段平衡生活和快乐 
+---
+<style>
+    header.intro-header {
+        background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}');
+        background-size: contain;
+        background-repeat-x: repeat;
+        -webkit-background-repeat-x: repeat;
+        -moz-background-repeat-x: repeat;
+        -mos-background-repeat-x: repeat;
+        background-position-x: 0;
+    }
+</style>
+<!-- Page Header -->
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
+                <div class="site-heading">
+                    <h1>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</h1>
+                    <!--<hr class="small">-->
+                    <span class="subheading">{{ page.description }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <div class="
+                col-lg-8 
+                col-md-8 
+                col-sm-12
+                col-xs-12
+                postlist-container">
+            <div class="">
+                <div class="life-container">
+                    <!--这里主要是自己的一些生活记录-->
+
+                    <ul id="life">
+                        <li>
+                            <a href="">
+
+                                <span class="pull-left">
+                   <span class="date">March 3</span>
+                                <span class="year">2017</span>
+                                </span>
+                                <span class="title"></span>
+                                <span class="clear"></span>
+                            </a>
+                            <span class="tags">
+                     {% for tag in post.tags %}
+                      <a href="{{site.baseurl}}/tags/#{{ tag }}">{{tag}}</a> &nbsp;
+                  {% endfor %}
+                </span>
+                        </li>
+
+                    </ul>
+
+
+                </div>
+            </div>
+        </div>
+        {% include sidebar.html %}
+    </div>
+</div>

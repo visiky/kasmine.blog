@@ -1,0 +1,25 @@
+{
+  "name": "Kasmine Blog",   // 网页显示给用户的完整名称
+  "short_name": "Kasmine Blog", // 空间不足时，显示的网站名称缩写
+
+  "description": "",          // 网站的详细描述
+  "icons": [{
+    "src": "icons/128.png",
+    "sizes": "128x128",
+    "type": "image/png"
+  }, {
+    "src": "icons/512.png",
+    "sizes": "512x512",
+    "type": "image/png"
+  }],
+  "background_color": "#fff",   // 启动屏和浏览器的背景颜色
+  "theme_color": "#000",
+  "start_url": "/kasmine.blog/",
+  "display": "standalone",
+  "orientation": "portrait"
+}
+
+
+
+
+

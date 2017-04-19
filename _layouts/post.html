@@ -1,0 +1,176 @@
+--- 
+layout: default 
+---
+
+<!-- Post Header -->
+<style type="text/css">
+header.intro-header {
+    position: relative;
+    margin-bottom:100px;
+    background-image: url('{{ site.baseurl }}/{% if page.post-img %}{{ page.post-img }}{% else %}{{ site.post-img }}{% endif %}')
+}
+.post-heading .meta-box:after{
+        content: '';
+    width: 108px;
+    height: 50px;
+    opacity: .6;
+    background: url('{{ site.baseurl }}/assets/img/meta-o.svg');
+    position: absolute;
+    right: 3px;
+    bottom: -50px;
+}
+h1+div,h1+p,h2+div,h2+p,h3+div,h3+p,h4+div,h4+p,h5+div,h5+p{
+  text-indent: 30px !important;
+}
+</style>
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 col-lg-offset-1 col-md-9 col-md-offset-1">
+                <div class="post-heading">
+
+                    <h1>{{ page.title }}</h1>
+                    {% comment %} always create a h2 for keeping the margin , Hux {% endcomment %} {% comment %} if page.subtitle {% endcomment
+                    %}
+                    <h2 class="subheading">{{ page.subtitle }}</h2>
+                    {% comment %} endif {% endcomment %}
+                            <span class="meta visible-xs">Posted by {% if page.author %}{{ page.author }}{% else %}{{ site.title }}{% endif %} on {{ page.date | date: "%B %-d, %Y" }}</span>
+
+                    <div class="meta-box hidden-xs">
+                        <ul>
+                            <li class="last-updated">
+                                <span class="name">Last updated:&nbsp;</span>
+                                <span class="value">{{page.date | date: "%B %-d, %Y"}}</span>
+                            </li>
+                            
+                            <li>
+                                <span class="name">Author:&nbsp;</span>
+                                <span class="value">{% if page.author %}{{page.author}}{% else %}{{site.author}}{% endif %}</span>
+                            </li>
+                            
+                            <!--<li>
+                                <span class="name">Share this：</span>
+                                <span class="value"></span>
+                            </li>-->
+                            {% if page.tags %}
+                            <li class="tags">
+                                <span class="name">Tags:&nbsp;</span>
+                                <span class="value">
+                                    {% for tag in page.tags %}
+                                       <a class="tag" href="{{ site.baseurl }}/tags/#{{ tag }}" title="{{ tag }}">{{ tag }}</a>
+                                    {% endfor %}
+                                </span>
+                            </li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container post-container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-9 col-lg-offset-1
+                col-md-9 col-md-offset-1
+                posts-container">
+
+                {{ content }}
+
+                <hr style="visibility: hidden;">
+
+
+
+                <ul class="pager">
+                    {% if page.previous.url %}
+                    <li class="previous">
+                        <a href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top"
+                            title="{{page.previous.title}}">
+                        Previous<br>
+                        <span>{{page.previous.title}}</span>
+                        </a>
+                    </li>
+                    {% endif %} {% if page.next.url %}
+                    <li class="next">
+                        <a href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.next.title}}">
+                        Next<br>
+                        <span>{{page.next.title}}</span>
+                        </a>
+                    </li>
+                    {% endif %}
+                </ul>
+
+               {% include disqus.html %}
+
+            </div>
+
+            <!-- Side Catalog Container -->
+            {% if site.catalog %}
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container"
+                data-spy="affix"
+                data-offset-top="-50px"
+                data-offset-bottom="350px">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+            {% endif %}
+
+</article>
+
+ {% if site.anchorjs %}
+<!-- async load function -->
+<script>
+    function async(u, c) {
+        var d = document,
+            t = 'script',
+            o = d.createElement(t),
+            s = d.getElementsByTagName(t)[0];
+        o.src = u;
+        if (c) {
+            o.addEventListener('load', function (e) {
+                c(null, e);
+            }, false);
+        }
+        s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!--TODO:待修改 自定义 -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("//cdnjs.cloudflare.com/ajax/libs/anchor-js/1.1.1/anchor.min.js", function () {
+        anchors.options = {
+            visible: 'always',
+            placement: 'right',
+            icon: ' '
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+
+    @media all and (min-width: 800px) {
+        .anchorjs-link {
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top: -0.1em;
+        }
+    }
+</style>
+{% endif %}
