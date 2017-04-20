@@ -215,10 +215,10 @@ self.addEventListener('fetch', event => {
 
 Application->Cache->Cache Storage 检查缓存内容，当你进入没有缓存的页面的时候，会自动加载`offline.html` 页面
 
-![]({{site,imgurl}}/in-post/pwa/cache-storage1.png)
-![]({{site,imgurl}}/in-post/pwa/cache-storage2.png)
-![]({{site,imgurl}}/in-post/pwa/cache-storage3.png)
-![]({{site,imgurl}}/in-post/pwa/cache-storage4.png)
+![]({{site.imgurl}}/in-post/pwa/cache-storage1.png)
+![]({{site.imgurl}}/in-post/pwa/cache-storage2.png)
+![]({{site.imgurl}}/in-post/pwa/cache-storage3.png)
+![]({{site.imgurl}}/in-post/pwa/cache-storage4.png)
 
 ### PWA 需要注意的一点:
 
