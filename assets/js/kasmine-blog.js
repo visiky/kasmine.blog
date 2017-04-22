@@ -31,7 +31,6 @@ jQuery(document).ready(function($) {
 
                 //adjust the appearance of side-catalog
                 $catalog.show()
-                debugger;
                 if (currentTop > (bannerHeight + 41)) {
                     $catalog.addClass('fixed')
                 } else {

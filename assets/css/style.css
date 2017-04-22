@@ -11,29 +11,22 @@
 }
 
 body {
-  /* Hux learn from
-     *     TypeIsBeautiful,
-     *     [This Post](http://zhuanlan.zhihu.com/ibuick/20186806) etc.
-     */
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Arial", "PingFang SC", "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", SimSun, sans-serif;
-  line-height: 1.7;
-  font-size: 16px;
-  color: #404040;
-  overflow-x: hidden;
+
+  line-height: 1.28;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  font-family: 'Helvetica Neue', Helvetica, 'Lucida Grande', Arial, 'Hiragino Sans GB', 微软雅黑, 'WenQuanYi Micro Hei', STHeiti, SimSun, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 15px;
+  color: #333333;
 }
-p {
-  margin: 30px 0;
-}
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  /* Hux learn from
-     *     TypeIsBeautiful,
-     *     [This Post](http://zhuanlan.zhihu.com/ibuick/20186806) etc.
-     */
+
   font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Arial", "PingFang SC", "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", SimSun, sans-serif;
   line-height: 1.7;
   line-height: 1.1;
@@ -57,13 +50,17 @@ article {
   overflow-x: hidden;
 }
 blockquote {
-  color: #808080;
-  font-style: italic;
-  font-size: 0.95em;
-  margin: 20px 0 20px;
+    color: #808080;
+    font-size: 0.95em;
+    margin: 20px 0 20px;
+    padding: 15px 30px 15px 15px;
+    margin: 20px 0;
+    background-color: rgba(248,245,236,0.5);
+    border-left: 5px solid rgba(191,87,73,0.2);
+    font-style: normal;
 }
 blockquote p {
-  margin: 0;
+  margin: 5px 0 0;
 }
 small.img-hint {
   display: block;
@@ -114,6 +111,11 @@ pre code {
 .post-container img{
   max-width: 100%;
   width: 100%;
+  border: 1px solid #e6e6e6;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: -webkit-zoom-in;
+  cursor: zoom-in;
 }
 .post-container a {
   color: #337ab7;
@@ -146,9 +148,17 @@ pre code {
 .post-container h6 + p {
   margin-top: 5px;
 }
+.post-container p{
+    margin: 0;
+    clear: both;
+    padding: 3px 0;
+    color: #444;
+    font-size: 14px;
+}
 .post-container ul,
 .post-container ol {
   margin-bottom: 40px;
+  padding: 0;
 }
 @media screen and (max-width: 768px) {
   .post-container ul,
@@ -170,7 +180,8 @@ pre code {
 }
 .post-container li p {
   margin: 0;
-  margin-bottom: 5px;
+  margin-bottom: 15px;
+  line-height: 1.5;
 }
 .post-container li h1,
 .post-container li h2,

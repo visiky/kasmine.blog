@@ -1,8 +1,16 @@
 /* to make lines scroll instead of wrap */
 /* from http://stackoverflow.com/a/23393920 */
 
+code{
+    font-family: 'source-code-pro', Menlo, Consolas, 'Courier New', monospace;
+    font-size: 13px;
+}
 .highlight pre code * {
   white-space: nowrap;   /* this sets all children inside to nowrap*/
+  /* kasmine learn from react.blog.css */
+  font-family: 'source-code-pro', Menlo, Consolas, 'Courier New', monospace;
+  line-height: 1.5;
+  font-size: 13px;
 }
 
 .highlight pre {
@@ -19,16 +27,40 @@
  * Courtesy of GitHub.com
  */
 
-.highlight pre, pre, .highlight .hll { background-color: #f8f8f8; border: 1px solid #ccc; padding: 6px 10px; border-radius: 3px; }
-.highlight .c { color: #999988; font-style: italic; }
+.highlight pre, pre, .highlight .hll {
+    background-color: #F8F5EC;
+    border: 1px solid #ccc;
+    border: none;
+    padding: 25px 10px 6px;
+    border-radius: 0;
+    position: relative;
+    margin:14px 0;
+}
+.highlight pre, pre:before, .highlight .hll:before {
+    content: "Code";
+    display: block;
+    background: #F1EDE4;
+    position: absolute;
+    height: 20px;
+    line-height: 20px;
+    text-indent: 10px;
+    top: 0;
+    left: 0;
+    right: 0;
+    font-size: 12px;
+    font-weight: bold;
+    color: #c2c0bc;
+}
+.highlight .c { color: #999988; }
 /*.highlight .err { color: #a61717; background-color: #e3d2d2; }*/
-.highlight .err { color: #a61717;}
-.highlight .k { font-weight: bold; }
-.highlight .o { font-weight: bold; }
-.highlight .cm { color: #999988; font-style: italic; }
+/*.highlight .err { color: #a61717;}*/
+.highlight .k { color:#859900; }
+.highlight .o { color:#859900; }
+.highlight .p{ color: #637c84;}
+.highlight .cm { color: #999988; }
 .highlight .cp { color: #999999; font-weight: bold; }
-.highlight .c1 { color: #999988; font-style: italic; }
-.highlight .cs { color: #999999; font-weight: bold; font-style: italic; }
+.highlight .c1 { color: #93a1a1;  }
+.highlight .cs { color: #999999; font-weight: bold;}
 .highlight .gd { color: #000000; background-color: #ffdddd; }
 .highlight .gd .x { color: #000000; background-color: #ffaaaa; }
 .highlight .ge { font-style: italic; }
@@ -42,16 +74,16 @@
 .highlight .gu { color: #800080; font-weight: bold; }
 .highlight .gt { color: #aa0000; }
 .highlight .kc { font-weight: bold; }
-.highlight .kd { font-weight: bold; }
+.highlight .kd { color:#268bd2; }
 .highlight .kn { font-weight: bold; }
 .highlight .kp { font-weight: bold; }
-.highlight .kr { font-weight: bold; }
+.highlight .kr { font-weight: bold; color:#268bd2; }
 .highlight .kt { color: #445588; font-weight: bold; }
 .highlight .m { color: #009999; }
 .highlight .s { color: #dd1144; }
 .highlight .n { color: #333333; }
-.highlight .na { color: teal; }
-.highlight .nb { color: #0086b3; }
+.highlight .na { color:#637c84; }
+.highlight .nb { color: #b58900; }
 .highlight .nc { color: #445588; font-weight: bold; }
 .highlight .no { color: teal; }
 .highlight .ni { color: purple; }
@@ -59,6 +91,7 @@
 .highlight .nf { color: #990000; font-weight: bold; }
 .highlight .nn { color: #555555; }
 .highlight .nt { color: navy; }
+.highlight .nx { color: #637c84;}
 .highlight .nv { color: teal; }
 .highlight .ow { font-weight: bold; }
 .highlight .w { color: #bbbbbb; }
@@ -86,6 +119,8 @@
 
 
 /*2017.04.11 kasmine补充语法高亮样式*/
-.highlighter-rouge{
-    white-space: pre;
+small code, p code {
+    color: #555;
+    padding: 3px 5px;
+    margin:0 5px;
 }

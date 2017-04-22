@@ -27,6 +27,8 @@
     "grunt-contrib-watch": "^0.5.3",
     "grunt-shell": "~0.6.4",
     "gulp": "^3.9.1",
-    "gulp-connect": "^5.0.0"
+    "gulp-connect": "^5.0.0",
+    "webpack": "^2.4.1",
+    "webpack-dev-server": "^2.4.2"
   }
 }
