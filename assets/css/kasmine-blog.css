@@ -11,6 +11,9 @@ a:focus {
   margin: 0;
   list-style: none;
 }
+.posts-container .posts{
+  padding: 0;
+}
 ol>li {
     list-style: decimal-leading-zero;
 }
@@ -757,6 +760,7 @@ footer .copyright a:focus {
   header.intro-header {
       margin-bottom: 20px;
   }
+  
 }
 .post-heading .meta-box li {
     background: 0;
@@ -1013,7 +1017,36 @@ footer .copyright a:focus {
     -webkit-font-smoothing: antialiased;
 }
 /*customize style end*/
-
+/*解决移动端问题*/
+header.intro-header {
+    position: relative;
+    margin-bottom:100px;
+}
+@media (max-width: 615px) {
+  .posts .title {
+    font-size: 14px;
+  }
+  .navbar-default .navbar-toggle {
+    width: 80px;
+  }
+  .navbar-default .navbar-toggle  .dropdown-item{
+    padding: 0;
+  }
+  .dropdown-item::before {
+    top:10px;
+    left:5px;
+  }
+  header.intro-header {
+    margin-bottom: 0;
+  }
+  .lSSlideWrapper.usingCss {
+    width: 96%;
+    padding: 4px 42px;
+  }
+  .lSSlideWrapper.usingCss img{
+    width: 76%;
+  }
+}
 
 
 

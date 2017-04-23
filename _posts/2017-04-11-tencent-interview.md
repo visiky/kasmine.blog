@@ -132,9 +132,60 @@ tags: [面试]
 
   **Answer**&nbsp;
 
-#####   上题自己挖坑,手写 观察者和订阅者模式代码(手写代码能力,跪,/(ㄒoㄒ)/~~)
+#####   观察者和订阅者模式代码(上题自己挖坑,手写代码能力,跪,/(ㄒoㄒ)/~~)
 
   **Answer**&nbsp;
+  参考一下：eventProxy.js 的实现吧～
+  ```javascript
+  'use strict';
+  const eventProxy = {
+    onObj: {},
+    oneObj: {},
+    on: function(key, fn) {
+      if(this.onObj[key] === undefined) {
+        this.onObj[key] = [];
+      }
+
+      this.onObj[key].push(fn);
+    },
+    one: function(key, fn) {
+      if(this.oneObj[key] === undefined) {
+        this.oneObj[key] = [];
+      }
+
+      this.oneObj[key].push(fn);
+    },
+    off: function(key) {
+      this.onObj[key] = [];
+      this.oneObj[key] = [];
+    },
+    trigger: function() {
+      let key, args;
+      if(arguments.length == 0) {
+        return false;
+      }
+      key = arguments[0];
+      args = [].concat(Array.prototype.slice.call(arguments, 1));
+
+      if(this.onObj[key] !== undefined
+        && this.onObj[key].length > 0) {
+        for(let i in this.onObj[key]) {
+          this.onObj[key][i].apply(null, args);
+        }
+      }
+      if(this.oneObj[key] !== undefined
+        && this.oneObj[key].length > 0) {
+        for(let i in this.oneObj[key]) {
+          this.oneObj[key][i].apply(null, args);
+          this.oneObj[key][i] = undefined;
+        }
+        this.oneObj[key] = [];
+      }
+    }
+  };
+
+  export default eventProxy;
+  ```
 
 #####   介绍闭包(谈到了闭包的缺点,顺带下题)
 

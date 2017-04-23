@@ -124,3 +124,11 @@ small code, p code {
     padding: 3px 5px;
     margin:0 5px;
 }
+.hll {
+  background-color: #f7ebc6;
+  border-left: 5px solid #f7d87c;
+  display: block;
+  margin-left: -14px;
+  margin-right: -14px;
+  padding-left: 9px;
+}
