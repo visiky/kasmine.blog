@@ -7,8 +7,8 @@ post-img: assets/img/post-bg.jpg
 email: momo736929286@gmail.com
 description: ""
 keyword: ""
-url: ""              # your host, for absolute URL
-baseurl: "/kasmine.blog"                             # for example, '/blog' if your blog hosted on 'host/blog'
+url: "http://www.kasmine.com"              # your host, for absolute URL
+baseurl: ""  
 imgurl: "/kasmine.blog/assets/img"
 # baseurl: ""                             # 本地调试使用
 # imgurl: "/assets/img"
