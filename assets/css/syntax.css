@@ -28,7 +28,9 @@ code{
  */
 
 .highlight pre, pre, .highlight .hll {
-    background-color: #F8F5EC;
+    background-color:rgba(248, 245, 236, 0.67);
+    background-image: url(https://static.segmentfault.com/v-58fb6746/global/img/blueprint.png);
+    background-position: 0 19px;
     border: 1px solid #ccc;
     border: none;
     padding: 25px 10px 6px;

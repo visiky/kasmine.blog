@@ -175,14 +175,14 @@ ol>li {
   }
   .navbar-custom.is-fixed .navbar-brand:hover,
   .navbar-custom.is-fixed .navbar-brand:focus {
-    color: #0085a1;
+    color: #76bf76;
   }
   .navbar-custom.is-fixed .nav li a {
     color: #404040;
   }
   .navbar-custom.is-fixed .nav li a:hover,
   .navbar-custom.is-fixed .nav li a:focus {
-    color: #0085a1;
+    color: #76bf76;
   }
   .navbar-custom.is-visible {
     /* if the user changes the scrolling direction, we show the header */
@@ -518,7 +518,7 @@ text-shadow:7px 4px 6px #8d8d83
 #tag_cloud .tag:hover,
 #tag_cloud a:active,
 #tag_cloud .tag:active {
-  background-color: #0085a1 !important;
+  background-color: #76bf76 !important;
 }
 
 @media only screen and (min-width: 768px) {
@@ -542,7 +542,7 @@ text-shadow:7px 4px 6px #8d8d83
 }
 
 .listing-seperator {
-  color: #0085a1;
+  color: #76bf76;
   font-size: 21px !important;
 }
 
@@ -631,7 +631,7 @@ footer .copyright a {
 
 footer .copyright a:hover,
 footer .copyright a:focus {
-  color: #0085a1;
+  color: #76bf76;
 }
 
 
@@ -817,11 +817,11 @@ footer .copyright a:focus {
   font-size: 14px;
 }
 .sidebar-container h5 {
-  color: #808080;
+  color: #009a61;
   padding-bottom: 1em;
 }
 .sidebar-container h5 a {
-  color: #808080 !important;
+  color: #009a61 !important;
   text-decoration: none;
 }
 .sidebar-container a {
@@ -829,14 +829,14 @@ footer .copyright a:focus {
 }
 .sidebar-container a:hover,
 .sidebar-container a:active {
-  color: #0085a1 !important;
+  color: #76bf76 !important;
 }
 .sidebar-container .tags a {
   border-color: #bfbfbf;
 }
 .sidebar-container .tags a:hover,
 .sidebar-container .tags a:active {
-  border-color: #0085a1;
+  border-color: #76bf76;
 }
 .sidebar-container .short-about img {
   width: 80%;
@@ -940,7 +940,7 @@ footer .copyright a:focus {
   background-color: #F5F5F5;
 }
 .side-catalog .catalog-body .active a {
-  color: #0085a1!important;
+  color: #76bf76!important;
 }
 @media (max-width: 1200px) {
   .side-catalog {
@@ -1022,6 +1022,12 @@ header.intro-header {
     position: relative;
     margin-bottom:100px;
 }
+@media (max-width: 714px) {
+  header.intro-header {
+    margin-bottom: 0;
+  }
+}
+
 @media (max-width: 615px) {
   .posts .title {
     font-size: 14px;
@@ -1035,9 +1041,6 @@ header.intro-header {
   .dropdown-item::before {
     top:10px;
     left:5px;
-  }
-  header.intro-header {
-    margin-bottom: 0;
   }
   .lSSlideWrapper.usingCss {
     width: 96%;

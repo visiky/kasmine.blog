@@ -84,7 +84,7 @@ document.getElementById('size-14').onclick =function(){
   ```
 
   3. 函数执行完毕后，count5执行环境的作用域链会被销毁，但是他的活动对象由于匿名函数还指向它，所以还存在于内存之中，直到匿名函数的作用域链被销毁
-  ![匿名函数作用域图]({{ site.imgurl }}/post/closure-scope-1.png)
+  ![匿名函数作用域图]({{ site.urlimg }}/post/closure-scope-1.png)
 
 - 利用闭包实现数据隐藏和封装。
 - 利用立即执行匿名函数定义私有变量和函数
@@ -98,9 +98,9 @@ document.getElementById('size-14').onclick =function(){
 
 
 
-![]({{ site.imgurl }}/in-post/closure-1.png)
-![]({{ site.imgurl }}/in-post/closure-2.png)
-![]({{ site.imgurl }}/in-post/closure-3.png)
+![]({{ site.urlimg }}post/closure-1.png)
+![]({{ site.urlimg }}post/closure-2.png)
+![]({{ site.urlimg }}post/closure-3.png)
 
 
 ## 内存泄露
