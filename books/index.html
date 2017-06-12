@@ -1,156 +1,103 @@
----
-title: Books
-layout: default
-description: "书单推荐"
----
-<style>
-html {
-    font-size: 75%;
-    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,PingFang SC,Hiragino Sans GB,STHeiti,Microsoft Yahei,Wenquanyi Micro Hei,sans-serif;
-}
-.book-container {
-    height: 100%;
-    width:100%;
-    padding-top: 110px;
-    background-image: url({{site.imgurl}}/books/book-bg.jpg);    
-    color: #fff;
-}
-@media screen and (max-width:776px){
-    .book-container{
-        padding-top:30px;
-    }
-}
-.top-book__info {
-    display: inline-block;
-    padding: 20px 40px;
-    margin:20px 0;
-    background: rgba(255, 83, 88, 0.8);
-    
-}
-.top-book__intro{
-    color: hsla(0,0%,100%,.6);
-    margin-top: 2rem;
-    font-size: 1.1rem;
-    line-height: 1.7;
-}
-.top-book__img {
-    position: absolute;
-    top: 50%;
-    right: 50px;
-    transform: translateY(-50%);
-    border: 1px solid rgba(255,255,255,.6);
-    padding: 3px 5px;
-}
+--- 
+title: Books 
+layout: default 
+description: "书单推荐" 
+--- 
+{% include bookStyle.html %}
 
-.top-book-container {
-/*    margin:100px;*/
-    position: relative;
-}
-
-
-
-
-.recommend-book__list .rank{
-    color:#f6a623
-}
-
-.recommend-book__list {
-    padding: 0;
-    list-style: none;
-    display: flex;
-    margin: 0 auto;
-    overflow: auto;
-}
-.recommend-book__list>li{
-    display: inline-block;
-    position: relative;
-    margin:10px 20px;
-}
-.recommend-book__list p{
-    margin: 0;
-    height: 20px;
-    white-space: pre;
-    text-overflow: ellipsis;
-    overflow: hidden;
-}
-
-.recommend-book__list>li .book__index {
-    font-size: 20px;
-    position: absolute;
-    /* top: 20px; */
-    left: 0;
-    background: inherit;
-    width: 40px;
-    height: 40px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-transform: rotate(45deg) translate(-50%,-50%);
-    transform: rotate(45deg) translate(-50%,-50%);
-    -webkit-transform-origin: top left;
-    transform-origin: top left;
-}
-.recommend-book__list span{
-    -webkit-transform: rotate(-45deg) translate(-50%,-50%);
-    transform: rotate(-45deg) translate(-50%,-50%);
-    top: 10px;
-    position: absolute;
-    left: 25px;
-}
-.recommend-book__list>li .book__img {
-    width: 101px;
-    height: 130px;
-}
-
-.recommend-book__list>li .book__info {
-    background: rgba(0, 0, 0, 0.45);
-    color: #fff;
-    padding: 3px 8px;
-    width:101px;
-}
-
-</style>
- <div class="container book-container">
-        <div class="row top-book-container">
-            <div class="top-book__info col-lg-6 col-lg-offset-1 col-md-offset-1 col-md-6 col-sm-12">
-                <h1> 
-                   <div>{{ site.topbook.year }}</div>
-                   <div>{{ site.topbook.type }}</div>
-                </h1>
-                <div>
-                    <h2>{{ site.topbook.address }}</h2> 
-                    <div>{{ site.topbook.author }}</div>
-                    <div>{{ site.topbook.star }}</div> 
-                    <p class="top-book__intro">{{ site.topbook.introduction }}</p>
-                </div> 
+<div class="container" id="book-container">
+    <div class="row top-book-container">
+        <div class="top-book__info col-lg-6 col-lg-offset-1 col-md-offset-1 col-md-6 col-sm-12">
+            <h1>
+                <div>前端书单📚 - JS篇</div>
+            </h1>
+            <div>
+                <h2>{{ site.topbook.name }}</h2>
+                <div>{{ site.topbook.author }}</div>
+                <div>{{ site.topbook.star }}</div>
+                <p class="top-book__intro">{{ site.topbook.introduction }}</p>
             </div>
-            <div class="top-book__img visible-md">
+        </div>
+        <!--<div class="top-book__img visible-md">
                 <a href="https://book.douban.com/subject/26819477/" target="_blank">
                     <img src="{{site.imgurl}}/books/book-1.jpg" alt="">
                 </a>
-            </div>    
-        </div>
-        
-        <div class="recommend-book-container">
-            <ul class="recommend-book__list col-lg-10 col-lg-offset-1 col-sm-12">
-               {% for book in site.data.books %}
-                <li>
-                    <div class="book__index">
-                        <!--<span>{{ index }}</span>   -->
-                    </div>
-                    <div class="book__img" style="background: linear-gradient(135deg, #f6a623 50%, rgba(255, 255, 255, 0) 0),url({{site.imgurl}}{{book.imgUrl}});background-repeat: no-repeat;background-size: 30px 30px,100% 100%;"></div>
-                    <div class="book__info">
-                        <p title={{ book.name }}>{{ book.name }}</p>
-                        <p class="rank">{{ book.rank }}</p>
-                    </div>  
-                </li>
-                {% endfor %}
-            </ul>
+            </div>    -->
+    </div>
+
+    <div class="recommend-book-container">
+       <div class="recommend-book-wrapper">
+            <ul class="recommend-book__list">
+            {% for book in site.data.books %}
+            <li>
+                <div class="book__index">
+                    <!--<span>{{ index }}</span>   -->
+                </div>
+                <div class="book__img" style="background: linear-gradient(135deg, #f6a623 50%, rgba(255, 255, 255, 0) 0),url({{site.imgurl}}{{book.imgUrl}});background-repeat: no-repeat;background-size: 30px 30px,100% 100%;"></div>
+                <div class="book__info">
+                    <p title={{ book.name }}>{{ book.name }}</p>
+                    <p class="rank">{{ book.rank }}</p>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+       </div>
+    </div>
+</div>
+
+<div class="container book-container book-css-container">
+    <div class="row top-book-container">
+        <div class="top-book__info col-lg-6 col-lg-offset-1 col-md-offset-1 col-md-6 col-sm-12">
+            <h1>
+                <div>前端书单📚 - CSS篇</div>
+            </h1>
+            <div>
+                <h2>CSS 揭秘</h2>
+                <!--<div>{{ site.topbook.author }}</div>-->
+                <!--<div>{{ site.topbook.star }}</div> -->
+                <!--<p class="top-book__intro">{{ site.topbook.introduction }}</p>-->
+            </div>
         </div>
     </div>
+
+    <div class="recommend-book-container">
+       <div class="recommend-book-wrapper">
+            <ul class="recommend-book__list">
+            {% for book in site.data.cssBooks %}
+            <li>
+                <div class="book__index">
+                    <!--<span>{{ index }}</span>   -->
+                </div>
+                <div class="book__img" style="background: linear-gradient(135deg, #f6a623 50%, rgba(255, 255, 255, 0) 0),url({{site.imgurl}}{{book.imgUrl}});background-repeat: no-repeat;background-size: 30px 30px,100% 100%;"></div>
+                <div class="book__info">
+                    <p title={{ book.name }}>{{ book.name }}</p>
+                    <p class="rank">{{ book.rank }}</p>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+       </div>
+    </div>
+</div>
+<div class="container book-container">
+    <div class="row top-book-container">
+        <div class="top-book__info col-lg-6 col-lg-offset-1 col-md-offset-1 col-md-6 col-sm-12">
+            <h1>
+                <div>前端书单📚 - HTML篇</div>
+            </h1>
+            <div>
+                <h2>{{ site.topbook.name }}</h2>
+                <div>{{ site.topbook.author }}</div>
+                <div>{{ site.topbook.star }}</div>
+                <p class="top-book__intro">{{ site.topbook.introduction }}</p>
+            </div>
+        </div>
+        <!--<div class="top-book__img visible-md">
+                <a href="https://book.douban.com/subject/26819477/" target="_blank">
+                    <img src="{{site.imgurl}}/books/book-1.jpg" alt="">
+                </a>
+            </div>    -->
+    </div>
+
+   
+</div>

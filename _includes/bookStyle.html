@@ -1,0 +1,148 @@
+<style>
+html {
+    font-size: 75%;
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,PingFang SC,Hiragino Sans GB,STHeiti,Microsoft Yahei,Wenquanyi Micro Hei,sans-serif;
+}
+#book-container {
+    height: 100%;
+    width:100%;
+    padding-top: 110px;
+    padding-bottom: 50px;
+    background-image: url({{site.imgurl}}/books/book-bg.jpg);    
+    color: #fff;
+    
+}
+#book-container.book-css-container {
+    background-image: url({{site.imgurl}}/books/book-css-bg.jpg);    
+    color: #333;
+}
+@media screen and (max-width:776px){
+    #book-container{
+        padding-top:30px;
+    }
+}
+.top-book__info {
+    display: inline-block;
+    padding: 20px 40px;
+    margin:20px 0;
+    background: rgba(255, 83, 88, 0.8);
+    
+}
+.top-book__intro{
+    color: hsla(0,0%,100%,.6);
+    margin-top: 2rem;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+.top-book__img {
+    position: absolute;
+    top: 50%;
+    right: 50px;
+    transform: translateY(-50%);
+    border: 1px solid rgba(255,255,255,.6);
+    padding: 3px 5px;
+}
+
+.top-book-container {
+/*    margin:100px;*/
+    position: relative;
+}
+.recommend-book-container {
+    overflow: hidden;
+    position: relative;
+    max-width: 1356px;
+    margin: 0 auto;
+    border: 5px solid;
+    border-width: 0 5px;
+    border-radius: 5px;
+}
+.recommend-book__list .rank{
+    color:#f6a623
+}
+
+.recommend-book__list {
+    padding: 0 30px !important;
+    list-style: none;
+    /*display: flex;*/
+    margin: 0 auto;
+    /*overflow: auto;*/
+    /* 修改：带nav的书籍画廊 */
+    width: 2220px;  
+}
+.recommend-book-wrapper{
+    position: relative;
+     
+}
+.recommend-book__list>li{
+    display: inline-block;
+    position: relative;
+    margin:10px 20px;
+}
+.recommend-book__list p{
+    margin: 0;
+    height: 20px;
+    white-space: pre;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.recommend-book__list>li .book__index {
+    font-size: 20px;
+    position: absolute;
+    /* top: 20px; */
+    left: 0;
+    background: inherit;
+    width: 40px;
+    height: 40px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-transform: rotate(45deg) translate(-50%,-50%);
+    transform: rotate(45deg) translate(-50%,-50%);
+    -webkit-transform-origin: top left;
+    transform-origin: top left;
+}
+.recommend-book__list span{
+    -webkit-transform: rotate(-45deg) translate(-50%,-50%);
+    transform: rotate(-45deg) translate(-50%,-50%);
+    top: 10px;
+    position: absolute;
+    left: 25px;
+}
+.recommend-book__list>li .book__img {
+    width: 101px;
+    height: 130px;
+}
+
+.recommend-book__list>li .book__info {
+    background: rgba(0, 0, 0, 0.45);
+    color: #fff;
+    padding: 3px 8px;
+    width:101px;
+}
+
+.recommend-book-container .nav{
+        position: absolute;
+    z-index: 2;
+    top: calc(50% - 25px);
+    width: 25px;
+    height: 50px;
+    background: url(http://img.xiami.net/static/img/index/page_icon.png) no-repeat;
+    _background-image: url(http://img.xiami.net/static/img/index/page_icon.gif);
+    outline: none;
+}
+.recommend-book-container .nav.prev {
+    left: 0;
+    background-position: -25px 0;
+}
+.recommend-book-container .nav.next {
+    right: 0;
+    background-position: 0 0;
+}
+</style>

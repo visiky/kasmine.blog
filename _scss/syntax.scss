@@ -1,0 +1,136 @@
+/* to make lines scroll instead of wrap */
+/* from http://stackoverflow.com/a/23393920 */
+
+code{
+    font-family: 'source-code-pro', Menlo, Consolas, 'Courier New', monospace;
+    font-size: 13px;
+}
+.highlight pre code * {
+  white-space: nowrap;   /* this sets all children inside to nowrap*/
+  /* kasmine learn from react.blog.css */
+  font-family: 'source-code-pro', Menlo, Consolas, 'Courier New', monospace;
+  line-height: 1.5;
+  font-size: 13px;
+}
+
+.highlight pre {
+  overflow-x: auto;       /* this sets the scrolling in x*/
+}
+
+.highlight pre code {
+  white-space: pre;       /* forces <code> to respect <pre> formatting */
+}
+
+
+/*
+ * GitHub style for Pygments syntax highlighter, for use with Jekyll
+ * Courtesy of GitHub.com
+ */
+
+.highlight pre, pre, .highlight .hll {
+    background-color:rgba(248, 245, 236, 0.67);
+    background-image: url(https://static.segmentfault.com/v-58fb6746/global/img/blueprint.png);
+    background-position: 0 19px;
+    border: 1px solid #ccc;
+    border: none;
+    padding: 25px 10px 6px;
+    border-radius: 0;
+    position: relative;
+    margin:14px 0;
+}
+.highlight pre, pre:before, .highlight .hll:before {
+    content: "Code";
+    display: block;
+    background: #F1EDE4;
+    position: absolute;
+    height: 20px;
+    line-height: 20px;
+    text-indent: 10px;
+    top: 0;
+    left: 0;
+    right: 0;
+    font-size: 12px;
+    font-weight: bold;
+    color: #c2c0bc;
+}
+.highlight .c { color: #999988; }
+/*.highlight .err { color: #a61717; background-color: #e3d2d2; }*/
+/*.highlight .err { color: #a61717;}*/
+.highlight .k { color:#859900; }
+.highlight .o { color:#859900; }
+.highlight .p{ color: #637c84;}
+.highlight .cm { color: #999988; }
+.highlight .cp { color: #999999; font-weight: bold; }
+.highlight .c1 { color: #93a1a1;  }
+.highlight .cs { color: #999999; font-weight: bold;}
+.highlight .gd { color: #000000; background-color: #ffdddd; }
+.highlight .gd .x { color: #000000; background-color: #ffaaaa; }
+.highlight .ge { font-style: italic; }
+.highlight .gr { color: #aa0000; }
+.highlight .gh { color: #999999; }
+.highlight .gi { color: #000000; background-color: #ddffdd; }
+.highlight .gi .x { color: #000000; background-color: #aaffaa; }
+.highlight .go { color: #888888; }
+.highlight .gp { color: #555555; }
+.highlight .gs { font-weight: bold; }
+.highlight .gu { color: #800080; font-weight: bold; }
+.highlight .gt { color: #aa0000; }
+.highlight .kc { font-weight: bold; }
+.highlight .kd { color:#268bd2; }
+.highlight .kn { font-weight: bold; }
+.highlight .kp { font-weight: bold; }
+.highlight .kr { font-weight: bold; color:#268bd2; }
+.highlight .kt { color: #445588; font-weight: bold; }
+.highlight .m { color: #009999; }
+.highlight .s { color: #dd1144; }
+.highlight .n { color: #333333; }
+.highlight .na { color:#637c84; }
+.highlight .nb { color: #b58900; }
+.highlight .nc { color: #445588; font-weight: bold; }
+.highlight .no { color: teal; }
+.highlight .ni { color: purple; }
+.highlight .ne { color: #990000; font-weight: bold; }
+.highlight .nf { color: #990000; font-weight: bold; }
+.highlight .nn { color: #555555; }
+.highlight .nt { color: navy; }
+.highlight .nx { color: #637c84;}
+.highlight .nv { color: teal; }
+.highlight .ow { font-weight: bold; }
+.highlight .w { color: #bbbbbb; }
+.highlight .mf { color: #009999; }
+.highlight .mh { color: #009999; }
+.highlight .mi { color: #009999; }
+.highlight .mo { color: #009999; }
+.highlight .sb { color: #dd1144; }
+.highlight .sc { color: #dd1144; }
+.highlight .sd { color: #dd1144; }
+.highlight .s2 { color: #dd1144; }
+.highlight .se { color: #dd1144; }
+.highlight .sh { color: #dd1144; }
+.highlight .si { color: #dd1144; }
+.highlight .sx { color: #dd1144; }
+.highlight .sr { color: #009926; }
+.highlight .s1 { color: #dd1144; }
+.highlight .ss { color: #990073; }
+.highlight .bp { color: #999999; }
+.highlight .vc { color: teal; }
+.highlight .vg { color: teal; }
+.highlight .vi { color: teal; }
+.highlight .il { color: #009999; }
+.highlight .gc { color: #999; background-color: #EAF2F5; }
+
+
+/*2017.04.11 kasmine补充语法高亮样式*/
+small code, p code {
+    color: #555;
+    padding: 3px 5px;
+    margin:0 5px;
+}
+.hll {
+  background-color: #f7ebc6;
+  border-left: 5px solid #f7d87c;
+  display: block;
+  margin-left: -14px;
+  margin-right: -14px;
+  padding-left: 9px;
+}

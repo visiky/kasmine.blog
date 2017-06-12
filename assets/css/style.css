@@ -1,3 +1,6 @@
+@import 'syntax';
+
+
 @media (min-width: 1200px) {
   .post-container,
   .sidebar-container {

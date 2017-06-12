@@ -7,12 +7,17 @@ post-img: assets/img/post-bg.jpg
 email: momo736929286@gmail.com
 description: ""
 keyword: ""
-url: "https://www.kasmine.cn"              # your host, for absolute URL
-baseurl: ""  
-imgurl: "/assets/img"
+# url: "http://www.kasmine.cn"              # your host, for absolute URL
+baseurl: "/kasmine.blog"  
+imgurl: "/kasmine.blog/assets/img"
 # baseurl: ""                             # 本地调试使用
 # imgurl: "/assets/img"
 
+
+# Basic settings
+sass: 
+  sass_dir: _scss
+  # style: compressed
 
 
 # SNS settings
@@ -97,10 +102,8 @@ friends: [{
 
 # 推荐top书籍
 topbook: {
-  year: "2016年度",
-  type: "社科人文",
-  address: "东京本屋",
-  author: "[日] 吉井忍",
-  star: "★★★★★ 8.9 1107 人评价",
-  introduction: "就像书里采访的今野书店一样，我们每个人身边可能都有（或者应该有）这样一个便利的“异世界”连接口，走进去，随意挑一本，就可以去体会不一样的生活。朱尔赫斯"
+  name: "JavaScript高级程序设计（第3版）",
+  author: "[美] Nicholas C·Zakas ",
+  star: "★★★★★ 9.3   1360人评价",
+  introduction: "全书从JavaScript 语言实现的各个组成部分——语言核心、DOM、BOM、事件模型讲起，深入浅出地探讨了面向对象编程、Ajax 与Comet 服务器端通信，HTML5 表单、媒体、Canvas（包括WebGL）及Web Workers、地理定位、跨文档传递消息、客户端存储（包括IndexedDB）等新API，还介绍了离线应用和与维护、性能、部署相关的最佳开发实践。本书附录展望了未来的API 和ECMAScript Harmony 规范。"
 }

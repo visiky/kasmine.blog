@@ -137,6 +137,16 @@
             $('#tag_cloud a').tagcloud();
         })
     }
+    // only load jquery.imgsider.js in book.html
+    if($('#book_container').length !== 0){
+        async('{{ "/assets/js/jquery.imgslider.js" | prepend: site.baseurl }}',function(){
+            $(function() {
+                $( '.img-slider' ).forEach(function(imgSliderItem){
+                    $(imgSliderItem).imgslider();
+                });
+            }); 
+        })
+    }
 </script>
 
 <!--Add Google Analytic-->
