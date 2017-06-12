@@ -921,14 +921,21 @@ footer .copyright a:focus {
   font-size: 13px;
   font-weight: bold;
 }
-.side-catalog .catalog-body .h3_nav {
+.side-catalog .catalog-body .h2_nav {
   text-indent:8px;
 }
-.side-catalog .catalog-body .h4_nav,
+.side-catalog .catalog-body .h3_nav {
+  text-indent:16px;
+  font-size: 11px;
+}
+.side-catalog .catalog-body .h4_nav {
+  text-indent: 20px;
+  font-size: 9px;
+}
 .side-catalog .catalog-body .h5_nav,
 .side-catalog .catalog-body .h6_nav {
-  text-indent: 14px;
-  font-size: 12px;
+  text-indent: 24px;
+  font-size: 8px;
 }
 .side-catalog .catalog-body .h4_nav a,
 .side-catalog .catalog-body .h5_nav a,
