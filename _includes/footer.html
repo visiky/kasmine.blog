@@ -179,6 +179,18 @@
         $('.side-catalog').toggleClass("fold")
     }))
 
+    // TODO: 节流控制
+    window.onscroll = function(e) {
+        // debugger;
+        var $scrollTop = document.body.scrollTop;
+        var $headerHeight =document.body.querySelector('.intro-header').offsetHeight;
+        var $catalogContainer = document.querySelector('.catalog-container');
+            if($scrollTop > $headerHeight ){
+                $catalogContainer.style.top = 20;
+            } else {
+                $catalogContainer.style.top = $headerHeight - $scrollTop + 20;
+            }
+    }
 
     async("{{ '/assets/js/jquery.nav.js' | prepend: site.baseurl }}", function () {
         $('.catalog-body').onePageNav({
