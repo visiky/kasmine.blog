@@ -40,8 +40,9 @@ header-img: "/assets/img/categories-bg.jpg"
             	</div>-->
 			<h2>Categories</h2>
 			<ul>
-				{% for category in site.categories %}
-				<li>{{ category }}</li>
+				{% for post in site.categories %}
+				<!--  这里 category 其实是整一篇 post    -->
+				<li>{{ post }}</li>
 				{% endfor %}
 
 			</ul>

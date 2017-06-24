@@ -55,8 +55,7 @@ article {
 blockquote {
     color: #808080;
     font-size: 0.95em;
-    margin: 20px 0 20px;
-    padding: 15px 30px 15px 15px;
+    padding: 5px 30px 5px 15px;
     margin: 20px 0;
     background-color: rgba(248,245,236,0.5);
     border-left: 5px solid rgba(191,87,73,0.2);
@@ -64,6 +63,19 @@ blockquote {
 }
 blockquote p {
   margin: 5px 0 0;
+  font-style: italic;
+  font-size: 13px !important;
+  line-height: 18px !important;
+  color: #dd1144 !important;
+}
+p {
+    font-size: 15px;
+    line-height: 23px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #4d4d4d;
+    font-family: 'proxima-nova', sans-serif;
+    font-weight: 400;
 }
 small.img-hint {
   display: block;
@@ -166,6 +178,25 @@ pre code {
   margin: 0;
   margin-left: 20px;
 }
+.post-container ul li,
+.post-container ol li {
+  font-size: 15px;
+  line-height: 25px;
+  margin: 0;
+  color: #4d4d4d;
+  display: list-item;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+@media only all and (min-width: 1150px) {
+  .post-container ul li,
+  .post-container ol li,
+  .post-container p {
+    font-size: 17px;
+    line-height: 27px;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .post-container ul,
   .post-container ol {
@@ -186,7 +217,7 @@ pre code {
 }
 .post-container li p {
   margin: 0;
-  margin-bottom: 15px;
+  /*margin-bottom: 15px;*/
   line-height: 1.5;
 }
 .post-container li h1,

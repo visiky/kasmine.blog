@@ -1,8 +1,0 @@
-{
-  "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-connect": "^5.0.0",
-    "gulp-livereload": "^3.8.1",
-    "gulp-spawn": "^0.4.0"
-  }
-}
