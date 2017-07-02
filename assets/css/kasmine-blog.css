@@ -666,11 +666,12 @@ footer .copyright a:focus {
 }
 
 .posts .date {
-  /* width: 20px; */
-  color: rgb(218, 10, 122);
-  text-transform: uppercase;
-  font-size: 19px;
-  line-height: 19px;
+    min-width: 68px;
+    color: rgb(218, 10, 122);
+    text-transform: uppercase;
+    font-size: 19px;
+    line-height: 19px;
+    display: inline-block;
 }
 
 .posts .year {
@@ -804,11 +805,28 @@ footer .copyright a:focus {
     /*color: rgb(128, 128, 128);*/
     font-weight: normal;
     letter-spacing: 0.5px;
-    white-space: pre;
+    white-space: pre-wrap;
     overflow: hidden;
     text-overflow: ellipsis;
     display: block;
 }
+.posts-container table tr {
+  border-bottom: 1px solid #eee;
+}
+.posts-container table td{
+    padding: 5px 10px;
+}
+.posts-container table th {
+    padding: 8px 10px;  
+    border-top: 1px solid #eee;
+}
+.posts-container table td:not(:last-child),
+.posts-container table th:not(:last-child) {
+    border-right: 1px solid #eee;
+}
+
+
+
 
 /*Sidebar Style start*/
 

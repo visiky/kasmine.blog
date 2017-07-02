@@ -188,14 +188,15 @@ pre code {
   margin-bottom: 5px;
   margin-top: 5px;
 }
-@media only all and (min-width: 1150px) {
+
+/*@media only all and (min-width: 1150px) {
   .post-container ul li,
   .post-container ol li,
   .post-container p {
     font-size: 17px;
     line-height: 27px;
   }
-}
+}*/
 
 @media screen and (max-width: 768px) {
   .post-container ul,
@@ -433,7 +434,7 @@ form .row:first-child .floating-label-form-group {
     color: rgb(128, 128, 128);
     font-weight: normal;
     letter-spacing: 0.5px;
-    white-space: pre;
+    white-space: pre-wrap;
     overflow: hidden;
     text-overflow: ellipsis;
     display: block;

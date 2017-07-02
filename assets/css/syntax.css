@@ -18,7 +18,7 @@ code{
 }
 
 .highlight pre code {
-  white-space: pre;       /* forces <code> to respect <pre> formatting */
+  white-space: pre-wrap;       /* forces <code> to respect <pre> formatting */
 }
 
 

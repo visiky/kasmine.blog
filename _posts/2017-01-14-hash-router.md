@@ -1,7 +1,6 @@
 ---
 layout: post
 title: 基于hash和pushState的网页前端路由实现
-category: JavaScript
 tag: 前端
 ---
 

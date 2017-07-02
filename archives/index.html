@@ -1,51 +1,71 @@
 --- 
 title: Archives 
-layout: default 
+layout: page 
 description: 
 header-img: "/assets/img/categories-bg.jpg" 
 ---
 
-<!-- Page Header -->
-<header class="intro-header" style="background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-				<div class="site-heading" id="tag-heading">
-					<h1>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</h1>
-					<span class="subheading">{{ page.description }}</span>
-				</div>
-			</div>
-		</div>
-	</div>
-</header>
-
 <!-- Main Content -->
-<div class="container">
-	<div class="row">
-		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-
-			<!--<div class="violet-archive fn-clear"> 
-                	<p class="ui-grid-2 year">{{ post.date | date: '%Y' }}</p>
-                	<div class="ui-grid-17 ui-grid-right ui-grid-bottom">
-                		<article class="article fn-clear">
-                            <div class="ui-grid-6 v-archive-tit">
-                                <p class="v-date"><span>&#8227;</span><time pubdate="{{ post.date | date: '%b %d, %Y' }}">{{ post.date | date: '%b %d' }}</time></p>
-                                <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
-                            </div>
-                            <div class="ui-grid-11 v-archive-det">
-                                <p>{{ post.description }}</p>
-                            </div>
-                        </article>
-                	</div>
-            	</div>-->
-			<h2>Categories</h2>
-			<ul>
-				{% for post in site.categories %}
-				<!--  这里 category 其实是整一篇 post    -->
-				<li>{{ post }}</li>
-				{% endfor %}
-
-			</ul>
-		</div>
-	</div>
+<div class="container col-lg-8
+                col-md-8
+                col-sm-12
+                col-xs-12 post-container">
+	<h2>归档</h2>
+	{% for category in site.categories %}
+	<h5 name="{{ category | first }}">{{ category | first }}</h5>
+		<ul>
+		{% for posts in category %}
+		{% for post in posts %}
+			<li class='custom-link'>
+				<a href="{{ post.url | prepend: site.baseurl }}">
+					{{ post.title }}
+					{% if post.subtitle %}<span class='post-subtitle'>{{post.subtitle}}</span>{% endif %}
+					<small class='pull-right'>
+						<time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+					</small>
+				</a>
+			</li>
+		{% endfor %}
+		{% endfor %}
+		</ul>
+	{% endfor %}
 </div>
+<style>
+a.anchorjs-link::after {
+    font-size: 15px;
+}
+.custom-link {
+	margin-left: 23px !important;
+}
+.custom-link .anchorjs-link {
+	margin-left: -1.3em !important;
+}
+.custom-link .post-subtitle {
+	margin-left: 10px;
+    font-size: 12px;
+    color: gray;
+}
+</style>
+<script>
+		function async(u, c) {
+			var d = document,
+				t = 'script',
+				o = d.createElement(t),
+				s = d.getElementsByTagName(t)[0];
+			o.src = u;
+			if (c) {
+				o.addEventListener('load', function (e) {
+					c(null, e);
+				}, false);
+			}
+			s.parentNode.insertBefore(o, s);
+		}
+		async("//cdnjs.cloudflare.com/ajax/libs/anchor-js/1.1.1/anchor.min.js",function(){
+			anchors.options = {
+				visible: 'always',
+				placement: 'left',
+				icon: '📃  '
+			};
+			anchors.add('.custom-link')
+		})
+</script>

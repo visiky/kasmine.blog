@@ -60,7 +60,7 @@ disqus_username: _your_disqus_short_name_
 
 # Analytics settings
 # Google Analytics
-ga_track_id: 'UA-89922034-1'            # Format: UA-xxxxxx-xx
+# ga_track_id: 'UA-89922034-1'            # Format: UA-xxxxxx-xx
 # ga_domain:
 
 
