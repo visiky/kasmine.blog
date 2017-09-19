@@ -18,7 +18,7 @@ header-img: "/assets/img/categories-bg.jpg"
 		{% for post in posts %}
 			<li class='custom-link'>
 				<a href="{{ post.url | prepend: site.baseurl }}">
-					{{ post.title }}
+					<div></div>{{ post.title }}
 					{% if post.subtitle %}<span class='post-subtitle'>{{post.subtitle}}</span>{% endif %}
 					<small class='pull-right'>
 						<time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>

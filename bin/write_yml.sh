@@ -9,7 +9,7 @@ if [ ${suffix} == 'md' ]
 then
 fname=${file%.*} # % 从右边算起最后一个
 filetmp=$file.tmp%
-outerpara=1
+fname=${fname:0-11}
 awk -v name="$fname" 'BEGIN{print "---\nlayout: post\ntitle: "name"\ntags:\n---\n"}{print $0}' $file > $filetmp
 mv $filetmp $file
 fi
