@@ -38,7 +38,7 @@ code{
     position: relative;
     margin:14px 0;
 }
-.highlight pre, pre:before, .highlight .hll:before {
+pre:before, .highlight .hll:before {
     content: "Code";
     display: block;
     background: #F1EDE4;

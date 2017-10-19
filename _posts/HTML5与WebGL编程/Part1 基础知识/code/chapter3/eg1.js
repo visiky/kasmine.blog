@@ -45,7 +45,7 @@ window.onload = function () {
     // And put the geometry and material together into a mesh
     cube = new THREE.Mesh(geometry, material);
     // Move the mesh back from the camera and tilt it toward the viewer
-    cube.position.z = -35;
+    cube.position.z = -6;
     cube.rotation.x = Math.PI / 5;
     cube.rotation.y = Math.PI / 5;
     // Finally, add the mesh to our scene
