@@ -660,7 +660,7 @@ footer .copyright a:focus {
   display: block;
   font-family: 'Lato';
   font-weight: 700;
-  width: 100px;
+  width: 70px;
   float: left;
   margin-right: 20px;
 }
@@ -790,7 +790,7 @@ footer .copyright a:focus {
 
 /*paginator*/
 .posts-container .pager li {
-  width: 48%;
+  width: 40%;
 }
 .posts-container .pager li.next {
   float: right;
@@ -800,6 +800,9 @@ footer .copyright a:focus {
 }
 .pager li > a {
   width:100%;
+}
+.pager .page_number {
+  border: none;
 }
 .posts-container .pager li > a > span {
     /*color: rgb(128, 128, 128);*/

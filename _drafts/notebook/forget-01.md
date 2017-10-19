@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 2017-09-18-yn42mo
-tags:
+tags: typescript
 ---
 
 > 笔者的一些看法

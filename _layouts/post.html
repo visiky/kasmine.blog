@@ -36,7 +36,7 @@ header.intro-header {
                         <ul>
                             <li class="last-updated">
                                 <span class="name">Last updated:&nbsp;</span>
-                                <span class="value">{{page.date | date: "%B %-d, %Y"}}</span>
+                                <span class="value">{{page.date | date: "%b %-d, %Y"}}</span>
                             </li>
                             
                             <li>
@@ -147,9 +147,7 @@ header.intro-header {
 <script>
     async("//cdnjs.cloudflare.com/ajax/libs/anchor-js/1.1.1/anchor.min.js", function () {
         anchors.options = {
-            visible: 'always',
-            placement: 'right',
-            icon: ' 🏹 '
+            visible: 'false',
         };
         anchors.add('h1').remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
     })
