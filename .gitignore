@@ -9,3 +9,11 @@ node_modules/
 
 # TSC build out dir lib
 **/lib/
+
+
+# code example
+# **/code/**
+
+
+# python
+python-learning/**/*.*
