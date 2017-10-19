@@ -808,7 +808,7 @@ footer .copyright a:focus {
     /*color: rgb(128, 128, 128);*/
     font-weight: normal;
     letter-spacing: 0.5px;
-    white-space: pre-wrap;
+    white-space: pre;
     overflow: hidden;
     text-overflow: ellipsis;
     display: block;
