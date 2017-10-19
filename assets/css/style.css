@@ -38,10 +38,10 @@ h1 {
   font-size: 30px;
 }
 h2 {
-  font-size: 26px;
+  font-size: 1.75em;
 }
 h3 {
-  font-size: 22px;
+  font-size: 1.5em;
 }
 h4 {
   font-size: 18px;
@@ -66,15 +66,15 @@ blockquote {
     padding: 5px 30px 5px 15px;
     margin: 20px 0;
     background-color: rgba(248,245,236,0.5);
-    border-left: 5px solid rgba(191,87,73,0.2);
+    border-left: 3px solid rgba(191,87,73,0.2);
     font-style: normal;
 }
 blockquote p {
   margin: 5px 0 0;
-  font-style: italic;
   font-size: 13px !important;
-  line-height: 18px !important;
   color: #dd1144 !important;
+  line-height: 1.6;
+  word-wrap: break-word;
 }
 p {
     font-size: 15px;
@@ -148,12 +148,15 @@ pre code {
   color: #76bf76;
 }
 .post-container h1,
-.post-container h2,
+.post-container h2 {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
 .post-container h3,
 .post-container h4,
 .post-container h5,
 .post-container h6 {
-  margin: 20px 0 25px;
+  padding-bottom: 10px;  
 }
 .post-container h5 {
   font-size: 19px;
@@ -180,9 +183,14 @@ pre code {
 }
 .post-container ul,
 .post-container ol {
-  /* 06-24 修改边距问题*/
-  padding: 0;
+  /* 2017-10-19 修改边距问题*/
+  padding: 0 7px;
   margin: 0 20px;
+}
+.post-container ul ul,
+.post-container ol ul{
+  /*  2017-10-19 fix style */
+  list-style: circle;
 }
 .post-container ul li,
 .post-container ol li {
