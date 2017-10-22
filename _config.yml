@@ -35,7 +35,10 @@ facebook_username:  kasmineLiao
 # from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
 highlighter: rouge
 paginate: 8
-exclude: ["less","node_modules","Gruntfile.js","package.json","README.md","README.zh.md"]
+exclude: ["less", "node_modules", "Gruntfile.js",
+  "package.json",
+  "README.md",
+  "README.zh.md"]
 anchorjs: true                          # 如何设置
 
 

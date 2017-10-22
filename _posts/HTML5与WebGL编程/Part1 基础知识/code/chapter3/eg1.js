@@ -23,27 +23,29 @@ function run() {
 window.onload = function () {
     var canvas = document.getElementById("webglcanvas");
     // create THREE.js renderer and add to canvas
-    renderer = new THREE.WebGLRenderer({
-        canvas: canvas,
-        antialias: true
+    renderer = new window.THREE.WebGLRenderer({
+        antialias: true,
+        canvas: canvas
     });
     // set the viewport Size
     renderer.setSize(canvas.width, canvas.height);
     // create a new scene of ThreeJS
-    scene = new THREE.Scene();
+    scene = new window.THREE.Scene();
     // add a camera so as to see the scene
-    camera = new THREE.PerspectiveCamera(45, canvas.width / canvas.height, 1, 4000);
+    camera = new window.THREE.PerspectiveCamera(45, canvas.width / canvas.height, 1, 4000);
     scene.add(camera);
     // Create a texture-mapped cube and add it to the scene
     // First, create the texture map
     var mapUrl = "../images/crate.jpg";
-    var map = THREE.ImageUtils.loadTexture(mapUrl);
+    var map = window.THREE.ImageUtils.loadTexture(mapUrl);
     // Now, create a Basic material; pass in the map
-    var material = new THREE.MeshBasicMaterial({ map: map });
+    var material = new window.THREE.MeshBasicMaterial({
+        map: map
+    });
     // Create the cube geometry
-    var geometry = new THREE.CubeGeometry(2, 2, 2);
+    var geometry = new window.THREE.CubeGeometry(2, 2, 2);
     // And put the geometry and material together into a mesh
-    cube = new THREE.Mesh(geometry, material);
+    cube = new window.THREE.Mesh(geometry, material);
     // Move the mesh back from the camera and tilt it toward the viewer
     cube.position.z = -6;
     cube.rotation.x = Math.PI / 5;

@@ -13,8 +13,7 @@
   "license": "MIT",
   "dependencies": {
     "@types/three": "^0.84.27",
-    "gulp": "^3.9.1",
-    "three.js": "^0.77.1"
+    "gulp": "^3.9.1"
   },
   "devDependencies": {
     "gulp-shell": "^0.6.3"

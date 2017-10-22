@@ -7,7 +7,7 @@
 // 着色器类型
 enum SHADER_TYPE {
   vertex = "vertex",
-  fragment = "fragment"
+  fragment = "fragment",
 }
 
 // 2. 获取webgl绘图上下文
@@ -74,23 +74,24 @@ function createCube(gl: WebGLRenderingContext) {
    -1.0, -1.0, -1.0,
    -1.0, -1.0,  1.0,
    -1.0,  1.0,  1.0,
-   -1.0,  1.0, -1.0
+   -1.0,  1.0, -1.0,
    ];
-   gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(verts), gl.STATIC_DRAW);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(verts), gl.STATIC_DRAW);
 
    // Color
-   const colorBuffer = gl.createBuffer();
-   gl.bindBuffer(gl.ARRAY_BUFFER, colorBuffer);
-   const faceColors = [
+  const colorBuffer = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, colorBuffer);
+  const faceColors = [
     [1.0, 0.0, 0.0, 1.0], // Front face
     [0.0, 1.0, 0.0, 1.0], // Back face
     [0.0, 0.0, 1.0, 1.0], // Top face
     [1.0, 1.0, 0.0, 1.0], // Bottom face
     [1.0, 0.0, 1.0, 1.0], // Right face
-    [0.0, 1.0, 1.0, 1.0]  // Left face
+    [0.0, 1.0, 1.0, 1.0],  // Left face
   ];
   let vertexColors = [];
-  for (let i in faceColors) {
+  // tslint:disable-next-line:forin
+  for (const i in faceColors) {
     const color = faceColors[i];
     for (let j = 0; j < 4; j++) {
       vertexColors = vertexColors.concat(color);
@@ -99,24 +100,23 @@ function createCube(gl: WebGLRenderingContext) {
   gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertexColors), gl.STATIC_DRAW);
 
   // Index data (defines the triangles to be drawn)
-  var cubeIndexBuffer = gl.createBuffer();
+  const cubeIndexBuffer = gl.createBuffer();
   gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, cubeIndexBuffer);
-  var cubeIndices = [
+  const cubeIndices = [
       0, 1, 2,      0, 2, 3,    // Front face
       4, 5, 6,      4, 6, 7,    // Back face
       8, 9, 10,     8, 10, 11,  // Top face
       12, 13, 14,   12, 14, 15, // Bottom face
       16, 17, 18,   16, 18, 19, // Right face
-      20, 21, 22,   20, 22, 23  // Left face
+      20, 21, 22,   20, 22, 23,  // Left face
   ];
   gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint16Array(cubeIndices), gl.STATIC_DRAW);
-  
 
   const cube = {
-    buffer: vertexBuffer, 
-    colorBuffer: colorBuffer, 
-    indices:cubeIndexBuffer,
-    vertSize: 3, nVerts:24, colorSize:4, nColors: 24, nIndices:36,
+    buffer: vertexBuffer,
+    colorBuffer,
+    indices: cubeIndexBuffer,
+    vertSize: 3, nVerts: 24, colorSize: 4, nColors: 24, nIndices: 36,
     primtype: gl.TRIANGLES};
 
   return cube;
@@ -128,25 +128,25 @@ let projectionMatrix, modelViewMatrix,
 rotationAxis;
 function initMatrices(canvas: HTMLCanvasElement) {
   // create a modelViewMatrix, include a camera located in (0, 0, -8)
-  modelViewMatrix = (<any>window).mat4.create();
-  (<any>window).mat4.translate(modelViewMatrix, modelViewMatrix, [
+  modelViewMatrix = (window as any).mat4.create();
+  (window as any).mat4.translate(modelViewMatrix, modelViewMatrix, [
     0,
     0,
-    -8
+    -8,
   ]);
 
   // create a projectonMatrix with a view of 45 degree angle;
-  projectionMatrix = (<any>window).mat4.create();
-  (<any>window).mat4.perspective(
+  projectionMatrix = (window as any).mat4.create();
+  (window as any).mat4.perspective(
     projectionMatrix,
     Math.PI / 4,
     canvas.width / canvas.height,
     1,
-    10000
+    10000,
   );
 
-  rotationAxis = (<any>window).vec3.create();
-  (<any>window).vec3.normalize(rotationAxis, [1, 1, 1]);
+  rotationAxis = (window as any).vec3.create();
+  (window as any).vec3.normalize(rotationAxis, [1, 1, 1]);
 }
 
 // 6. 创建一个或多个实现绘制算法的着色器
@@ -154,12 +154,12 @@ function initMatrices(canvas: HTMLCanvasElement) {
 function createShader(
   gl: WebGLRenderingContext,
   str: string,
-  type: SHADER_TYPE
+  type: SHADER_TYPE,
 ): WebGLShader {
   let shader: WebGLShader;
-  if (type == SHADER_TYPE.fragment) {
+  if (type === SHADER_TYPE.fragment) {
     shader = gl.createShader(gl.FRAGMENT_SHADER);
-  } else if (type == SHADER_TYPE.vertex) {
+  } else if (type === SHADER_TYPE.vertex) {
     shader = gl.createShader(gl.VERTEX_SHADER);
   } else {
     return null;
@@ -177,12 +177,12 @@ function createShader(
 }
 
 // GLSL编写的顶点着色器源代码
-  const vertexShaderSource =
+const vertexShaderSource =
   `attribute vec3 vertexPos;\n
      attribute vec4 vertexColor;\n
      uniform mat4 modelViewMatrix;\n
      uniform mat4 projectionMatrix;\n
-     varying vec4 vColor;\n
+     letying vec4 vColor;\n
      void main(void) {\n
   		// Return the transformed and projected vertex value\n
          gl_Position = projectionMatrix * modelViewMatrix * \n
@@ -191,14 +191,13 @@ function createShader(
          vColor = vertexColor;\n
      }\n`;
 
-  const fragmentShaderSource = 
+const fragmentShaderSource =
     ` precision mediump float;\n
-     varying vec4 vColor;\n
+     letying vec4 vColor;\n
      void main(void) {\n
      // Return the pixel color: always output white\n
          gl_FragColor = vColor;\n
     }\n`;
-
 
 let shaderProgram: WebGLProgram;
 let shaderVertexPositionAttribute: number;
@@ -212,7 +211,7 @@ function initShader(gl: WebGLRenderingContext) {
   const fragmentShader = createShader(
     gl,
     fragmentShaderSource,
-    SHADER_TYPE.fragment
+    SHADER_TYPE.fragment,
   );
   const vertexShader = createShader(gl, vertexShaderSource, SHADER_TYPE.vertex);
 
@@ -225,7 +224,7 @@ function initShader(gl: WebGLRenderingContext) {
   // 获取指向着色器参数的指针
   shaderVertexPositionAttribute = gl.getAttribLocation(
     shaderProgram,
-    "vertexPos"
+    "vertexPos",
   );
   gl.enableVertexAttribArray(shaderVertexPositionAttribute);
 
@@ -234,11 +233,11 @@ function initShader(gl: WebGLRenderingContext) {
 
   shaderProjectionMatrixUniform = gl.getUniformLocation(
     shaderProgram,
-    "projectionMatrix"
+    "projectionMatrix",
   );
   shaderModelViewMatrixUniform = gl.getUniformLocation(
     shaderProgram,
-    "modelViewMatrix"
+    "modelViewMatrix",
   );
 
   if (!gl.getProgramParameter(shaderProgram, gl.LINK_STATUS)) {
@@ -251,7 +250,7 @@ function draw(gl: WebGLRenderingContext, obj) {
   // clear the background (with black)
   gl.clearColor(0.0, 0.0, 0.0, 1.0);
   gl.enable(gl.DEPTH_TEST);
-  gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+  gl.clear(gl.COLOR_BUFFER_BIT || gl.DEPTH_BUFFER_BIT);
 
   // set the shader to use
   gl.useProgram(shaderProgram);
@@ -265,7 +264,7 @@ function draw(gl: WebGLRenderingContext, obj) {
     gl.FLOAT,
     false,
     0,
-    0
+    0,
   );
   gl.bindBuffer(gl.ARRAY_BUFFER, obj.colorBuffer);
   gl.vertexAttribPointer(
@@ -274,10 +273,9 @@ function draw(gl: WebGLRenderingContext, obj) {
     gl.FLOAT,
     false,
     0,
-    0
+    0,
   );
   gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, obj.indices);
- 
 
   gl.uniformMatrix4fv(shaderProjectionMatrixUniform, false, projectionMatrix);
   gl.uniformMatrix4fv(shaderModelViewMatrixUniform, false, modelViewMatrix);
@@ -287,7 +285,7 @@ function draw(gl: WebGLRenderingContext, obj) {
 }
 
 let currentTime = Date.now();
-// TODO: newAdd
+// TODO newAdd
 function animate() {
     const duration = 5000; // ms
     const now = Date.now();
@@ -296,11 +294,11 @@ function animate() {
     // 5s一圈
     const fract = deltat / duration;
     const angle = Math.PI * 2 * fract;
-    (<any>window).mat4.rotate(modelViewMatrix, modelViewMatrix, angle, rotationAxis);
+    (window as any).mat4.rotate(modelViewMatrix, modelViewMatrix, angle, rotationAxis);
 }
 
 function run(gl: WebGLRenderingContext, cube) {
-    requestAnimationFrame(function() { run(gl, cube); });
+    requestAnimationFrame(() => { run(gl, cube); });
     draw(gl, cube);
     animate();
 }
@@ -320,4 +318,4 @@ window.onload = () => {
     initShader(gl);
     // 8.
     run(gl, cube);
-  }
+  };
