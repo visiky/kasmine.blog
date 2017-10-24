@@ -1,6 +1,6 @@
 _site/
 ts-example/
-
+.DS_Store
 
 # Dependency directories
 node_modules/

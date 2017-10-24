@@ -6,6 +6,7 @@
     "jsRules": {},
     "rules": {
         "no-var-keyword": true,
+        "no-var-requires": false,
         "one-variable-per-declaration": false,
         "no-reference": false,
         "no-unused-variable": true,

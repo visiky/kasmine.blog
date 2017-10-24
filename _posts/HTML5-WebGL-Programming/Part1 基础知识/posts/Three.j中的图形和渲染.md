@@ -78,11 +78,19 @@ TODO 什么例子
     - [ ] 其他：操作指引示意动画，地球上方会显示当前城市的经纬度，“了解更多”的结语页面等
   - 技术路径
 
-
+- [x] 地球3D球体
 
 
 
 ## 材质 (material)
+
+Three.js 的标准材质类型:
+- `MeshBasicMaterial`
+  - 适用于
+- `MeshPhongMaterial`
+  Phong着色法会在光线直射的地方显示高亮区域，而在背面显示黑暗
+- `MeshLambertMaterial`
+
 
 ## 光源
 
@@ -117,3 +125,5 @@ const earth = createEarth(earthGroup);
 console.log(scene.getObjectByName("Earth_Group"));
 console.log(scene.getObjectByName("Earth_Group").getObjectByName("EARTH"));
 ```
+
+相关的[create**代码](https://github.com/Me-Momo/kasmine.blog/blob/master/_posts/HTML5-WebGL-Programming/code/chapter4/ThreeScene/x-plan.ts)
