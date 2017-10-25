@@ -20,6 +20,8 @@ function createRenderer(canvas) {
             canvas: canvas,
             antialias: true
         });
+        // set backgroundColor of Renderer
+        renderer.setClearColor(new THREE.Color(0xEEEEEE));
         renderer.setSize(canvas.width, canvas.height);
     }
     else {

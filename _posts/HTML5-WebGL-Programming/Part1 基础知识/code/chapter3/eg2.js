@@ -45,7 +45,9 @@ window.onload = function () {
     var mapUrl = "../images/crate.jpg";
     var map = THREE.ImageUtils.loadTexture(mapUrl);
     // Now, create a Basic material; pass in the map
-    var material = new THREE.MeshPhongMaterial({ map: map });
+    var material = new THREE.MeshPhongMaterial({
+        map: map
+    });
     // Create the cube geometry
     var geometry = new THREE.CubeGeometry(2, 2, 2);
     // And put the geometry and material together into a mesh

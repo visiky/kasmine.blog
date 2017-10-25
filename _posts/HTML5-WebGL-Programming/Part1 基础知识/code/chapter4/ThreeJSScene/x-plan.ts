@@ -18,12 +18,14 @@ let IS_START: boolean = false;
  */
 
 function createRenderer(canvas?: HTMLCanvasElement): THREE.WebGLRenderer {
-  let renderer;
+  let renderer: THREE.WebGLRenderer;
   if (canvas) {
     renderer = new THREE.WebGLRenderer({
       canvas,
       antialias: true,
     });
+    // set backgroundColor of Renderer
+    renderer.setClearColor(new THREE.Color(0xEEEEEE));
     renderer.setSize(canvas.width, canvas.height);
   } else {
     renderer = new THREE.WebGLRenderer();

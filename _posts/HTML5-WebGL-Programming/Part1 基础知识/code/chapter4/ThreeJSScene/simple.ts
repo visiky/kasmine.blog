@@ -2,7 +2,7 @@
 const DURATION = 5000; // ms
 
 // Basic: Renderer, Camera && Scene
-let renderer: THREE.Renderer, camera: THREE.PerspectiveCamera;
+let renderer: THREE.WebGLRenderer, camera: THREE.PerspectiveCamera;
 let scene: THREE.Scene;
 
 // 声明 立方体, 圆锥, 球体分组和立方体分组
@@ -30,6 +30,7 @@ function createScene(canvas: HTMLCanvasElement) {
     canvas,
     antialias: true,
   });
+  renderer.setClearColor("#EEEFFF", 0.85);
   renderer.setSize(canvas.width, canvas.height);
   scene = new THREE.Scene();
 

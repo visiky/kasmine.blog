@@ -64,7 +64,7 @@ function createCube(gl) {
         -1.0, -1.0, -1.0,
         -1.0, -1.0, 1.0,
         -1.0, 1.0, 1.0,
-        -1.0, 1.0, -1.0
+        -1.0, 1.0, -1.0,
     ];
     gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(verts), gl.STATIC_DRAW);
     // Color
@@ -76,9 +76,10 @@ function createCube(gl) {
         [0.0, 0.0, 1.0, 1.0],
         [1.0, 1.0, 0.0, 1.0],
         [1.0, 0.0, 1.0, 1.0],
-        [0.0, 1.0, 1.0, 1.0] // Left face
+        [0.0, 1.0, 1.0, 1.0],
     ];
     var vertexColors = [];
+    // tslint:disable-next-line:forin
     for (var i in faceColors) {
         var color = faceColors[i];
         for (var j = 0; j < 4; j++) {
@@ -95,7 +96,7 @@ function createCube(gl) {
         8, 9, 10, 8, 10, 11,
         12, 13, 14, 12, 14, 15,
         16, 17, 18, 16, 18, 19,
-        20, 21, 22, 20, 22, 23 // Left face
+        20, 21, 22, 20, 22, 23,
     ];
     gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint16Array(cubeIndices), gl.STATIC_DRAW);
     var cube = {
@@ -117,7 +118,7 @@ function initMatrices(canvas) {
     window.mat4.translate(modelViewMatrix, modelViewMatrix, [
         0,
         0,
-        -8
+        -8,
     ]);
     // create a projectonMatrix with a view of 45 degree angle;
     projectionMatrix = window.mat4.create();
@@ -129,10 +130,10 @@ function initMatrices(canvas) {
 // 利用WebGL提供的方法编译顶点着色器和片段着色器的源代码
 function createShader(gl, str, type) {
     var shader;
-    if (type == SHADER_TYPE.fragment) {
+    if (type === SHADER_TYPE.fragment) {
         shader = gl.createShader(gl.FRAGMENT_SHADER);
     }
-    else if (type == SHADER_TYPE.vertex) {
+    else if (type === SHADER_TYPE.vertex) {
         shader = gl.createShader(gl.VERTEX_SHADER);
     }
     else {
@@ -147,8 +148,8 @@ function createShader(gl, str, type) {
     return shader;
 }
 // GLSL编写的顶点着色器源代码
-var vertexShaderSource = "attribute vec3 vertexPos;\n\n     attribute vec4 vertexColor;\n\n     uniform mat4 modelViewMatrix;\n\n     uniform mat4 projectionMatrix;\n\n     varying vec4 vColor;\n\n     void main(void) {\n\n  \t\t// Return the transformed and projected vertex value\n\n         gl_Position = projectionMatrix * modelViewMatrix * \n\n             vec4(vertexPos, 1.0);\n\n         // Output the vertexColor in vColor\n\n         vColor = vertexColor;\n\n     }\n";
-var fragmentShaderSource = " precision mediump float;\n\n     varying vec4 vColor;\n\n     void main(void) {\n\n     // Return the pixel color: always output white\n\n         gl_FragColor = vColor;\n\n    }\n";
+var vertexShaderSource = "attribute vec3 vertexPos;\n\n     attribute vec4 vertexColor;\n\n     uniform mat4 modelViewMatrix;\n\n     uniform mat4 projectionMatrix;\n\n     letying vec4 vColor;\n\n     void main(void) {\n\n  \t\t// Return the transformed and projected vertex value\n\n         gl_Position = projectionMatrix * modelViewMatrix * \n\n             vec4(vertexPos, 1.0);\n\n         // Output the vertexColor in vColor\n\n         vColor = vertexColor;\n\n     }\n";
+var fragmentShaderSource = " precision mediump float;\n\n     letying vec4 vColor;\n\n     void main(void) {\n\n     // Return the pixel color: always output white\n\n         gl_FragColor = vColor;\n\n    }\n";
 var shaderProgram;
 var shaderVertexPositionAttribute;
 var shaderVertexColorAttribute;
@@ -179,7 +180,7 @@ function draw(gl, obj) {
     // clear the background (with black)
     gl.clearColor(0.0, 0.0, 0.0, 1.0);
     gl.enable(gl.DEPTH_TEST);
-    gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+    gl.clear(gl.COLOR_BUFFER_BIT || gl.DEPTH_BUFFER_BIT);
     // set the shader to use
     gl.useProgram(shaderProgram);
     // connect up the shader parameters: vertex position and projection/model matrices
@@ -195,7 +196,7 @@ function draw(gl, obj) {
     gl.drawElements(obj.primtype, obj.nIndices, gl.UNSIGNED_SHORT, 0);
 }
 var currentTime = Date.now();
-// TODO: newAdd
+// TODO newAdd
 function animate() {
     var duration = 5000; // ms
     var now = Date.now();

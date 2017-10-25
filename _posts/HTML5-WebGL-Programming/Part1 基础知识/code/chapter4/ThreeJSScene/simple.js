@@ -25,6 +25,7 @@ function createScene(canvas) {
         canvas: canvas,
         antialias: true
     });
+    renderer.setClearColor("#EEEFFF", 0.85);
     renderer.setSize(canvas.width, canvas.height);
     scene = new THREE.Scene();
     camera = new THREE.PerspectiveCamera(45, canvas.width / canvas.height, 1, 2000);
