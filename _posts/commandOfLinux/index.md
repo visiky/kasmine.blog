@@ -32,3 +32,10 @@ $ find <指定目录> <指定条件> <指定动作>
 # 查看以my开头的txt文件
 find . -name 'my*.txt'
 ```
+
+## 删除
+
+```sh
+rm [filename]
+rm -rf [dirname]
+```
