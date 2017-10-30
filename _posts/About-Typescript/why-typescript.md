@@ -1,7 +1,7 @@
 ---
 layout: post
 tags: TypeScript
-date: 2017-10-19
+date: 2017/10/19
 ---
 
 # 参考阅读

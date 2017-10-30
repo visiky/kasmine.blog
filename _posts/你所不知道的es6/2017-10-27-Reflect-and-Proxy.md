@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Reflect & Proxy in es6
-tags: ES6
+category: ES6
 ---
 
 ## Reflect
