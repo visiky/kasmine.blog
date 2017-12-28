@@ -45,7 +45,7 @@ anchorjs: true                          # 如何设置
 
 # Gems
 # from PR#40, to support local preview for Jekyll 3.0
-gems: [jekyll-paginate]
+plugins: [jekyll-paginate]
 
 
 markdown: kramdown
