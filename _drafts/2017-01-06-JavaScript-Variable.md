@@ -1,7 +1,7 @@
 ---
 layout: post
 tags: javascript
-category: javascript
+# category: javascript
 title: JavaScript 变量和作用域
 ---
 

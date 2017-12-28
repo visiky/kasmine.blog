@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 开放网络平台
-categories: [前端每周清单 1,现代Web 开发魔法书]
+# categories: [前端每周清单 1,现代Web 开发魔法书]
 tag: 
 published: false
 --- 

@@ -2,7 +2,7 @@
 layout: post
 title: webpack配置 - 外部扩展
 date: 2017/10/25
-category: webpack
+# category: webpack
 ---
 
 # `externals`

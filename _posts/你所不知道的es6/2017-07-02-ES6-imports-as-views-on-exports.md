@@ -1,7 +1,7 @@
 ---
 layout: post
 title: ES6:imports as views on exports
-category: ES6
+# category: ES6
 --- 
 
 ## ES6 和 CommonJS 
