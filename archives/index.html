@@ -1,16 +1,12 @@
 --- 
 title: Archives 
 layout: page 
-description: 
+description: 前端程序媛的学习日常,不限于前端学习 👹
 header-img: "categories-bg.jpg" 
 ---
 
 <!-- Main Content -->
-<div class="container col-lg-8
-                col-md-8
-                col-sm-12
-                col-xs-12 post-container">
-	<h2>归档</h2>
+<div class="post-container">
 	{% for category in site.categories %}
 	<h5 name="{{ category | first }}">{{ category | first }}</h5>
 		<ul>
