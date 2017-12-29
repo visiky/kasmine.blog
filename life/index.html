@@ -1,12 +1,13 @@
 ---
 layout: default
-<!-- 暂时不显示在nav上 -->
-<!-- title: Life -->
+# 暂时不显示在nav上
+# title: Life
 header-img: post-bg-life.png
 description: 投入兴趣,找到快乐,在不同的阶段平衡生活和快乐
 ---
 
 <style>
+
     header.intro-header {
         background-image: url('{{ site.imgurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}');
         background-position-x: 0;
@@ -20,7 +21,6 @@ description: 投入兴趣,找到快乐,在不同的阶段平衡生活和快乐
     .life-container ul.post-preview {
         list-style: lao;
     }
-
 </style>
 <!-- Page Header -->
 <header class="intro-header">
@@ -49,17 +49,17 @@ description: 投入兴趣,找到快乐,在不同的阶段平衡生活和快乐
             <div class="">
                 <div class="life-container">
                     <!--这里主要是自己的一些生活记录-->
-                        {% for tag in site.tags %} {% if tag[0] == 'life' %} {% for post in tag[1] %}
-                        <ul class="post-preview">
-                            <li>
-                                <a href="{{ post.url | prepend: site.baseurl }}">
-                                    <p class="post-title">
-                                        <b>{{ post.title }}</b>
-                                    </p>
-                                    {{ post.excerpt | truncate: 100 }}
-                                </a>
-                            </li>
-                        </ul>
+                    {% for tag in site.tags %} {% if tag[0] == 'life' %} {% for post in tag[1] %}
+                    <ul class="post-preview">
+                        <li>
+                            <a href="{{ post.url | prepend: site.baseurl }}">
+                                <p class="post-title">
+                                    <b>{{ post.title }}</b>
+                                </p>
+                                {{ post.excerpt | truncate: 100 }}
+                            </a>
+                        </li>
+                    </ul>
                     {% endfor %} {% endif %} {% endfor %}
                 </div>
             </div>

@@ -17,3 +17,6 @@ node_modules/
 
 # python
 python-learning/**/*.*
+
+# draft
+**/**/*.draft.*

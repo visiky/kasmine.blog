@@ -2,6 +2,7 @@
 layout: post
 tags: javascript
 # category: javascript
+# categories: [javascript, 基础知识]
 title: JavaScript 变量和作用域
 ---
 

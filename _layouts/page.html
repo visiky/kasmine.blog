@@ -21,14 +21,6 @@ layout: default
 <!-- Main Content -->
 <div class="container">
     <div class="row">
-        {% if site.sidebar == false %}
-        <!-- NO SIDEBAR -->
-        <!-- PostList Container -->
-        <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-2 postlist-container">
-            {{ content }}
-        </div>
-        {% else %}
-
         <!-- USE SIDEBAR -->
         <!-- PostList Container -->
         <div class="
@@ -40,6 +32,6 @@ layout: default
             {{ content }}
         </div>
         <!-- Sidebar Container -->
-        {% include sidebar.html %} {% endif %}
+        {% include sidebar.html %}
     </div>
 </div>
