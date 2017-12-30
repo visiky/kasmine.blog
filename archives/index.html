@@ -8,44 +8,57 @@ header-img: "categories-bg.jpg"
 <div class="post-container archives-page">
 	<div class="left custom-nav" role="tablist">
 		<h5>归档</h5>
-		{% for category in site.categories %}
-		<h6>{{ category | first }}</h6>
-		<ul>
-			{% for posts in category %} {% for post in posts %}
-			<li class='custom-link'>
-				<a href="#{{ post.title }}">
-					<div>{{ post.title }}</div>
-					{% if post.subtitle %}
-					<span class='post-subtitle'>{{post.subtitle}}</span>{% endif %}
-				</a>
-			</li>
-			{% endfor %} {% endfor %}
-		</ul>
+		{% for type in site.data.categoryType %}
+			<div class="archive-item">
+					<!-- 使用BS的collapse组件  -->
+					<h6 class="archive-item-type collapsed" data-toggle="collapse" data-target="#{{type}}">{{ type }}</h6>
+					<div class="archive-item-content collapse" id="{{ type }}">
+						{% for category in site.categories %}
+						{% assign temp_category = category | first | split:"/" %}
+						{% assign temp_type = temp_category | first %}
+						{% assign temp_category = temp_category | last %}
+						{% if temp_type == type %}
+							<ul>
+								{% if temp_category != temp_type %}
+									<li class="archive-item-category"><b>{{ temp_category }}</b></li>
+								{% endif %}
+								{% for posts in category %} {% for post in posts %}
+									<li class='custom-link'>
+										<a href="#{{ post.title }}">
+											<div title="{{ post.title }}">{{ post.title }}</div>
+										</a>
+									</li>
+									{% endfor %} {% endfor %}
+							</ul>
+						{% endif %}
+						{% endfor %}
+					</div>
+			</div>
 		{% endfor %}
 	</div>
 	<div class="right">
-		<h5>概要</h5>
+		<h6>概要</h6>
 		<div class="custom-tab-content">
 			{% for category in site.categories %} {% for posts in category %} {% for post in posts %}
 			<div class="tab-pane fade" id={{ post.title }} role="tabpanel" aria-labelledby="nav-home-tab">
 				<div class="tab-pane-content">
-						<div class="post-excerpt">
-								<h4>
-										<a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-										<div class="post-tags">
-												{% for tag in post.tags %}
-													<span class="label label-info">{{ tag }}</span>
-												{% endfor %}
-										</div>
-										<small class='pull-right'>
-											<time datetime="{{ post.date | date:" %Y-%m-%d " }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-										</small>
-									</h4>
-								{{ post.excerpt | truncate: 500 }}
+					<div class="post-excerpt">
+						<h4>
+							<a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+							<div class="post-tags">
+								{% for tag in post.tags %}
+								<span class="label label-info">{{ tag }}</span>
+								{% endfor %}
 							</div>
-							<div class="extra-img" style="background:no-repeat center/100%  url('{{ site.imgurl }}/archive/denise-johnson-426641.jpg');">
-							</div>
-							<small>Photo by Denise Johnson on Unsplash</small>
+							<small class='pull-right'>
+								<time datetime="{{ post.date | date:" %Y-%m-%d " }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+							</small>
+						</h4>
+						{{ post.excerpt | truncate: 500 }}
+					</div>
+					<div class="extra-img" style="background:no-repeat center/100%  url('{{ site.imgurl }}/archive/denise-johnson-426641.jpg');">
+					</div>
+					<small>Photo by Denise Johnson on Unsplash</small>
 				</div>
 			</div>
 			{% endfor %} {% endfor %} {% endfor %}
@@ -80,7 +93,7 @@ header-img: "categories-bg.jpg"
 
 		.left {
 			flex: none;
-			width: 200px;
+			width: 33%;
 			display: flex;
 			flex-direction: column;
 		}
@@ -101,36 +114,72 @@ header-img: "categories-bg.jpg"
 			overflow-y: auto;
 		}
 
-		.custom-nav ul ul>li:not(:first-child) {
-			margin-left: 10px;
-		}
-
 		.custom-tab-content {
 			border: 1px solid #eee;
 			height: 500px;
 			position: relative;
 		}
+
 		.custom-tab-content .post-tags {
 			display: inline-block;
 			font-size: 12px;
 			vertical-align: middle;
 			margin-left: 10px;
 		}
+
 		.custom-tab-content .tab-pane {
 			position: absolute;
 			width: 100%;
 			height: 100%;
 		}
+
 		.custom-tab-content .tab-pane-content {
 			height: 100%;
 			padding: 8px 16px;
 		}
+
 		.custom-tab-content .tab-pane-content>div:first-child {
 			height: calc(100% - 250px);
 		}
+
 		.custom-tab-content .tab-pane-content>div:nth-child(2) {
 			height: 210px;
 			margin-top: 10px;
+		}
+		/* 添加目录层级缩进 */
+		.archive-item-type {
+			cursor: pointer;
+		}
+		.archive-item-type::before {
+			content: "-";
+			vertical-align: text-top;
+			margin: 4px 5px 0px;
+			font-size: 10px;
+			display: inline-block;
+    }
+		.archive-item-type.collapsed::before {
+			content: "+";
+    }
+		.archive-item-type + .archive-item-content {
+			margin-left: 16px;
+		}
+		.archive-item-content * {
+			font-size: 12px;
+		}
+		.archive-item-category ~ .custom-link {
+			margin-left: 10px !important;
+		}
+		/* use anchorjs */
+		.custom-link {
+			position: relative;
+			overflow: hidden;
+			text-indent: 20px;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			margin: 0 !important;
+		}
+		.custom-link .anchorjs-link {
+  	  margin-left: -40px !important;
 		}
 	</style>
 	<script>
