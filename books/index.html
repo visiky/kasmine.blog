@@ -9,7 +9,7 @@ description: "书单推荐"
     <div class="row top-book-container">
         <div class="top-book__info col-lg-6 col-lg-offset-1 col-md-offset-1 col-md-6 col-sm-12">
             <h1>
-                <div>前端书单📚 - JS篇</div>
+                <div>前端书单📚 - 整理了自己读过的书籍</div>
             </h1>
             <div>
                 <h2>{{ site.topbook.name }}</h2>
@@ -18,86 +18,26 @@ description: "书单推荐"
                 <p class="top-book__intro">{{ site.topbook.introduction }}</p>
             </div>
         </div>
-        <!--<div class="top-book__img visible-md">
-                <a href="https://book.douban.com/subject/26819477/" target="_blank">
-                    <img src="{{site.imgurl}}/books/book-1.jpg" alt="">
-                </a>
-            </div>    -->
     </div>
-
     <div class="recommend-book-container">
-       <div class="recommend-book-wrapper">
+        <div class="recommend-book-wrapper">
             <ul class="recommend-book__list">
-            {% for book in site.data.books %}
-            <li>
-                <div class="book__index">
-                    <!--<span>{{ index }}</span>   -->
-                </div>
-                <div class="book__img" style="background: linear-gradient(135deg, #f6a623 50%, rgba(255, 255, 255, 0) 0),url({{site.imgurl}}{{book.imgUrl}});background-repeat: no-repeat;background-size: 30px 30px,100% 100%;"></div>
-                <div class="book__info">
-                    <p title={{ book.name }}>{{ book.name }}</p>
-                    <p class="rank">{{ book.rank }}</p>
-                </div>
-            </li>
-            {% endfor %}
-        </ul>
-       </div>
-    </div>
-</div>
-
-<div class="container book-container book-css-container">
-    <div class="row top-book-container">
-        <div class="top-book__info col-lg-6 col-lg-offset-1 col-md-offset-1 col-md-6 col-sm-12">
-            <h1>
-                <div>前端书单📚 - CSS篇</div>
-            </h1>
-            <div>
-                <h2>CSS 揭秘</h2>
-                <!--<div>{{ site.topbook.author }}</div>-->
-                <!--<div>{{ site.topbook.star }}</div> -->
-                <!--<p class="top-book__intro">{{ site.topbook.introduction }}</p>-->
-            </div>
+                {% for book in site.data.books %}
+                <li>
+                    <a href="{{ book.url }}" target="_blank">
+                        <div class="book__year">
+                            <span>{{ book.date | 4 }}</span>  
+                        </div>
+                        <div class="book__img" style="background: linear-gradient(135deg, #f6a623 50%, rgba(255, 255, 255, 0) 0),url({{book.imgUrl}});background-repeat: no-repeat;background-size: 30px 30px,100% 100%;"></div>
+                        <div class="book__info">
+                            <p title={{ book.name }}>{{ book.name }}</p>
+                            <p class="rank">{{ book.rank }}</p>
+                        </div>
+                    </a>
+                </li>
+                {% endfor %}
+                <li>空的占位符</li>
+            </ul>
         </div>
     </div>
-
-    <div class="recommend-book-container">
-       <div class="recommend-book-wrapper">
-            <ul class="recommend-book__list">
-            {% for book in site.data.cssBooks %}
-            <li>
-                <div class="book__index">
-                    <!--<span>{{ index }}</span>   -->
-                </div>
-                <div class="book__img" style="background: linear-gradient(135deg, #f6a623 50%, rgba(255, 255, 255, 0) 0),url({{site.imgurl}}{{book.imgUrl}});background-repeat: no-repeat;background-size: 30px 30px,100% 100%;"></div>
-                <div class="book__info">
-                    <p title={{ book.name }}>{{ book.name }}</p>
-                    <p class="rank">{{ book.rank }}</p>
-                </div>
-            </li>
-            {% endfor %}
-        </ul>
-       </div>
-    </div>
-</div>
-<div class="container book-container">
-    <div class="row top-book-container">
-        <div class="top-book__info col-lg-6 col-lg-offset-1 col-md-offset-1 col-md-6 col-sm-12">
-            <h1>
-                <div>前端书单📚 - HTML篇</div>
-            </h1>
-            <div>
-                <h2>{{ site.topbook.name }}</h2>
-                <div>{{ site.topbook.author }}</div>
-                <div>{{ site.topbook.star }}</div>
-                <p class="top-book__intro">{{ site.topbook.introduction }}</p>
-            </div>
-        </div>
-        <!--<div class="top-book__img visible-md">
-                <a href="https://book.douban.com/subject/26819477/" target="_blank">
-                    <img src="{{site.imgurl}}/books/book-1.jpg" alt="">
-                </a>
-            </div>    -->
-    </div>
-
-   
 </div>

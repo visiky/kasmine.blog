@@ -1,8 +1,11 @@
 [{
   name: '精通CSS',
-  imgUrl: '',
-  rank: ''
+  url: 'https://book.douban.com/subject/4736167/',
+  imgUrl: 'https://img3.doubanio.com/lpic/s29054660.jpg',
+  rank: '8.7'
 },{
   name: '众妙之门-精通CSS3',
-  imgUrl: ''
+  url: 'https://book.douban.com/subject/24546948/',
+  imgUrl: 'https://img3.doubanio.com/lpic/s26591275.jpg',
+  rank: '7.6'
 }]
