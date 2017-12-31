@@ -6,11 +6,25 @@
   #   imgUrl: "/kasmine.blog/assets/img/books/book-1.jpg",
   #   rank: "9.7"
   # },{
+    name: 'JavaScript高级程序设计',
+    url: 'https://book.douban.com/subject/10546125/',
+    imgUrl: 'https://img3.doubanio.com/lpic/s8958650.jpg',
+    rank: '9.3',
+    date: '2016'
+  }, {
     name: "Javascript模式", # 差不多遗忘了
     url: 'https://book.douban.com/subject/11506062/',
     imgUrl: "https://img1.doubanio.com/lpic/s11337059.jpg",
     rank: "8.7",
     date: '2017'
+  },
+  # 全局篇
+  {
+    name: '前端架构设计',
+    imgUrl: 'https://img3.doubanio.com/lpic/s29425641.jpg',
+    url: 'https://book.douban.com/subject/27019706/',
+    rank: '6.5',
+    date: '2017/12/09'
   },
   # CSS篇
   {

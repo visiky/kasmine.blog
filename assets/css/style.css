@@ -200,7 +200,9 @@ pre code {
   display: list-item;
   margin: 5px 0;
 }
-
+.post-container ul li > ul {
+  margin-left: 18px;
+}
 /*@media only all and (min-width: 1150px) {
   .post-container ul li,
   .post-container ol li,

@@ -26,7 +26,7 @@ description: "书单推荐"
                 <li>
                     <a href="{{ book.url }}" target="_blank">
                         <div class="book__year">
-                            <span>{{ book.date | 4 }}</span>  
+                            <span>{{ book.date | slice:4 }}</span>  
                         </div>
                         <div class="book__img" style="background: linear-gradient(135deg, #f6a623 50%, rgba(255, 255, 255, 0) 0),url({{book.imgUrl}});background-repeat: no-repeat;background-size: 30px 30px,100% 100%;"></div>
                         <div class="book__info">
