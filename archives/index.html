@@ -56,9 +56,12 @@ header-img: "categories-bg.jpg"
 						</h4>
 						{{ post.excerpt }}
 					</div>
-					<div class="extra-img" style="background:no-repeat center/100%  url('{{ site.imgurl }}/archive/denise-johnson-426641.jpg');">
-					</div>
-					<small>Photo by Denise Johnson on Unsplash</small>
+					{% if post.header-img %}
+						<div class="extra-img" style="background:no-repeat center/100%  url('{{ site.imgurl }}/{{ post.header-img }}');"></div>
+					{% else %}
+						<div class="extra-img" style="background:no-repeat center/100%  url('{{ site.imgurl }}/archive/denise-johnson-426641.jpg');"></div>
+						<small>Photo by <b>Denise Johnson on Unsplash</b></small>
+					{% endif %}
 				</div>
 			</div>
 			{% endfor %} {% endfor %} {% endfor %}
@@ -133,6 +136,14 @@ header-img: "categories-bg.jpg"
 			height: 100%;
 		}
 
+		/* 处理层级关系，避免点击事件的冲突 */
+		.custom-tab-content .tab-pane.show {
+			z-index: 1;
+		}
+		.custom-tab-content .tab-pane.fade {
+			z-index: 0;
+		}
+
 		.custom-tab-content .tab-pane-content {
 			height: 100%;
 			padding: 8px 16px;
@@ -145,6 +156,13 @@ header-img: "categories-bg.jpg"
 		.custom-tab-content .tab-pane-content>div:nth-child(2) {
 			height: 210px;
 			margin-top: 10px;
+		}
+		/* 摘要内容 */
+		.post-excerpt ol li {
+			list-style: square;
+			font-size: 12px;
+			margin: 0;
+			line-height: 20px;
 		}
 		/* 添加目录层级缩进 */
 		.archive-item-type {

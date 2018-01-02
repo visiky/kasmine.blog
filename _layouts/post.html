@@ -78,7 +78,7 @@ header.intro-header {
                 col-md-9 col-md-offset-1
                 posts-container">
 
-                {{ content }}
+                {{ content | remove: 'excerpt_end' }}
 
                 <hr style="visibility: hidden;">
 

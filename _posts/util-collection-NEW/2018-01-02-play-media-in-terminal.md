@@ -14,7 +14,8 @@ excerpt_end
 
 ## SOX 
 - 缺点: 无法播放url链接的音频
-```sh
+
+```js
 brew install sox
 
 // play [filename]
@@ -31,7 +32,8 @@ Mplayer的特点是支持的格式相当多，还有要播放高清视频肯定�
 
 Mplayer 是一款自由的多媒体文件播放器。
 据其手册中所述，Mplayer 是目前这个星球上支持多媒体文件格式最多的软件。
-```sh
+
+```js
 brew install mplayer
 
 // mplayer [filename]
